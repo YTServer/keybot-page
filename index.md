@@ -6,7 +6,7 @@
 
 管理員：[Whitey](https://steamcommunity.com/id/Whitey_-/)
 
-金鑰機器人：[√Whitey | TF2 Keys Bot](https://steamcommunity.com/id/Whitey_Keybot/)
+金鑰機器人：[√Whitey \| TF2 Keys Bot](https://steamcommunity.com/id/Whitey_Keybot/)
 
 伺服器群組：[√Whitey Server](https://steamcommunity.com/groups/Whitey_Server)
 
@@ -14,7 +14,7 @@
 
 ### 如何購買
 
-1. 先加 [√Whitey | TF2 Keys Bot](https://steamcommunity.com/id/Whitey_Keybot/) 好友
+1. 先加 [√Whitey \| TF2 Keys Bot](https://steamcommunity.com/id/Whitey_Keybot/) 好友
 2. 輸入 buy 指令產生新訂單，例如：輸入 buy 10，會產生一筆 10 keys 的訂單
 3. 確認訂單數量、金額正確後到超商繳費
 4. 完成繳費後，傳送交易提案給 Bot 取貨

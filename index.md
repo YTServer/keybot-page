@@ -1,25 +1,31 @@
 ## Whitey's TF2 Key Bot 絕地要塞2 金鑰機器人
 
+### 目前 TF2 KEY 售價 新台幣 54 元
 
 ### 關於我
 
-目前 TF2 KEY 售價 新台幣 54 元
+管理員：[Whitey](https://steamcommunity.com/id/Whitey_-/)
 
-為了避免產生爭議，購買前請先詳細閱讀以下內容
+金鑰機器人：[√Whitey | TF2 Keys Bot](https://steamcommunity.com/id/Whitey_Keybot/)
+
+伺服器群組：[√Whitey Server](https://steamcommunity.com/groups/Whitey_Server)
+
+為了避免產生爭議，購買前請先詳細閱讀以下內容，有任何問題都可以詢問管理員
 
 ### 如何購買
 
-1. 先加 Bot 好友
-2. 輸入 buy 指令產生新訂單，例如：輸入 buy 10，會產生一筆10 keys 的訂單
+1. 先加 [√Whitey | TF2 Keys Bot](https://steamcommunity.com/id/Whitey_Keybot/) 好友
+2. 輸入 buy 指令產生新訂單，例如：輸入 buy 10，會產生一筆 10 keys 的訂單
 3. 確認訂單數量、金額正確後到超商繳費
 4. 完成繳費後，傳送交易提案給 Bot 取貨
 
 ### 注意事項
 
-* 購買之前請先確認商品 庫存 ，如果繳費後才發現商品數量不足，請耐心等候，我會盡快將商品補齊
-* 每筆交易都會含28元超商手續費，總共需要支付的金額為 售價 * 訂購數量 + 28 元
+* 購買之前請先確認商品 [庫存](https://steamcommunity.com/id/Whitey_Keybot/inventory/#440) ，如果繳費後才發現商品數量不足，請耐心等候，我會盡快將商品補齊
+* 每筆交易都會含 28 元超商手續費，總共需要支付的金額為 `售價 * 訂購數量 + 28 元`
 * 購買前請先確認自己的帳號是否能夠交易
 * 訂單繳費期限為 24 小時，請在時限內完成繳費
+* 付款完成後恕不接受退貨
 * 請確認要購買時再下訂單，以下為輸入 buy 10 後產生的訂單範例
 
 ```

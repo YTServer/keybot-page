@@ -1,7 +1,5 @@
 ## Whitey's TF2 Key Bot 絕地要塞2 金鑰機器人
 
-### 目前 TF2 KEY 售價 新台幣 54 元， {{ site.data.botstatus.stock }}
-
 ### 關於我
 
 管理員：[Whitey](https://steamcommunity.com/id/Whitey_-/)

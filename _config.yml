@@ -7,3 +7,4 @@ plugins:
 jekyll_get_json:
   - data: botstatus
     json: 'https://yt-restful.herokuapp.com/'
+google_analytics: G-KXXVTV8V14

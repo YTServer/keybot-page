@@ -13,10 +13,17 @@
     {% include head-custom.html %}
   </head>
   <script>
-    // fetch data from http://key.whitey.me when page is loaded
+    let dot = 0;
+    let loadingTimer = setInterval(() => {
+      dot = (dot + 1) % 6;
+      document.getElementById('stock-element').innerText = `庫存量：${'.'.repeat(dot)}`;
+    }, 250); 
+
     window.onload = function() {
       fetch('https://yt-restful.herokuapp.com/')
         .then(function(response) {
+          clearInterval(loadingTimer);
+          loadingTimer = null;
           return response.json();
         })
         .then(function(data) {
@@ -36,7 +43,7 @@
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
         <h2>目前 TF2 KEY 售價 新台幣 54 元</h2>
-        <h2 id="stock-element">庫存量：0</h2>
+        <h2 id="stock-element">庫存量：</h2>
       </header>
       <section>
 

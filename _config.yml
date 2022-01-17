@@ -2,9 +2,4 @@ theme: jekyll-theme-minimal
 title: Whitey's TF2 Key Bot
 description: Team Fortress 2 KEY 絕地要塞 2 金鑰 自動交易機器人 24 小時全天無休
 logo: https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/83/83858abbec5112e8312a787df7d5f47da6f17e62_full.jpg
-plugins:
-  - jekyll-get-json
-jekyll_get_json:
-  - data: botstatus
-    json: 'https://yt-restful.herokuapp.com/'
 google_analytics: G-KXXVTV8V14

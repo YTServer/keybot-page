@@ -51,7 +51,12 @@ Q: 為什麼 Bot 不會回應我？\
 A: 使用前先確認 Bot 的遊戲狀態是否顯示正在營業，如果顯示營業中卻沒有回應請通知管理員
 
 Q: 如何列印繳費單？\
-A: 請到 [列印繳費單教學](https://www.newebpay.com/website/Page/content/cvs_intro) 選擇想要繳費的超商後，依照網站中的圖操作即可
+A: 請參考以下連結，依照網站中的圖操作即可
+* [7-11](https://www.newebpay.com/info/site_description/seven_ibon_embedded)
+* [全家](https://www.newebpay.com/info/site_description/family_embedded)
+* [OK](https://www.newebpay.com/info/site_description/okshop_embedded)
+* [萊爾富](https://www.newebpay.com/info/site_description/hilife_embedded)
+
 
 Q: 有其他付款方式嗎？例如：轉帳、Mycard 或是用遊戲物品交易\
 A: 目前只接受超商繳費

@@ -16,7 +16,7 @@
     let dot = 0;
     let loadingTimer = setInterval(() => {
       dot = (dot + 1) % 6;
-      document.getElementById('stock-element').innerText = `庫存量：${'.'.repeat(dot)}`;
+      document.getElementById('stock-element').innerText = `剩餘數量：${'.'.repeat(dot)}`;
     }, 250); 
 
     window.onload = function() {
@@ -27,23 +27,26 @@
           return response.json();
         })
         .then(function(data) {
-          document.getElementById('stock-element').innerText = `庫存量：${data.stock}`;
+          document.getElementById('stock-element').innerText = `剩餘數量：${data.stock}`;
         });
     };
   </script>
   <body>
     <div class="wrapper">
       <header>
+        <!-- <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1> -->
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
 
         {% if site.logo %}
           <a href="https://steamcommunity.com/id/Whitey_Keybot/"><img src="{{site.logo | relative_url}}" alt="Whitey's Bot" /></a>
         {% endif %}
 
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
+        <!-- <p>{{ site.description | default: site.github.project_tagline }}</p> -->
 
-        <h2>目前 TF2 KEY 售價 新台幣 54 元</h2>
-        <h2 id="stock-element">庫存量：</h2>
+        <h2>出售價格：<strong style="color: red">$ 55</strong></h2>
+        <h2 id="stock-element">剩餘數量：{{ site: default_stock | default: 300}}</h2>
+        <h2>付款方式：7-11、全家、OK、萊爾富代碼繳費</h2>
+        <h2>已完成訂單：322</h2>
       </header>
       <section>
 

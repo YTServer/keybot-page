@@ -3,7 +3,7 @@ import React from "react";
 export class AboutMe extends React.Component {
   render() {
     return (
-      <div>
+      <div id="about-me">
         <div className="container mx-auto mt-28 flex max-w-7xl items-center justify-between p-6 lg:px-8">
           <div className="basis-2/3 pl-40 text-left text-white">
             <p className="text-4xl">About Me</p>

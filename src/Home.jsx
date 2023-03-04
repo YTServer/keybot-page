@@ -5,10 +5,10 @@ import { Card } from "./Card";
 export class HomePage extends React.Component {
   render() {
     return (
-      <div>
+      <div id="home">
         <div className="container mx-auto mt-28 flex max-w-7xl items-center justify-between p-6 lg:px-8">
           <div className="basis-1/3">
-            <img className="W-95 h-96 " src={keyBot}></img>
+            <img className="min-w-full aspect-square" src={keyBot}></img>
           </div>
           <div className="basis-2/3 pl-40 text-left text-white">
             <p className="text-4xl">Team Fortress 2 Keys </p>
@@ -22,7 +22,7 @@ export class HomePage extends React.Component {
             </a>
           </div>
         </div>
-        <div className="flex flex-row items-center justify-center p-6 lg:px-8">
+        <div className="flex flex-row items-center justify-center p-6 lg:px-8 max-w-full">
           <Card names="售價" number="55" unit="NTD" />
           <Card names="庫存" number="100" unit="把" />
           <Card names="已完成交易" number="1000000" unit="筆" />

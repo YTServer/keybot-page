@@ -1,15 +1,17 @@
 import { useState, Fragment } from "react";
 import _ from "lodash";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Dialog } from "@headlessui/react";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 import { HomePage } from "./Home";
 import { HowToBuy } from "./HowToBuy";
 import { BotScript } from "./BotScript";
 import { QA } from "./QA";
 import { AboutMe } from "./AboutMe";
+import vars from "./variable";
 
 export default function App() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [setMobileMenuOpen] = useState(false);
+
   function jumpToBlock(id) {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   }
@@ -26,7 +28,7 @@ export default function App() {
     return (
       <a
         key={item.id}
-        className="text-sm font-semibold leading-6 text-white"
+        className="cursor-pointer text-sm font-semibold leading-6 text-white"
         onClick={() => jumpToBlock(item.id)}
       >
         {item.name}
@@ -44,15 +46,12 @@ export default function App() {
           <div className="flex flex-wrap lg:flex-1 ">
             <a
               href="https://steamcommunity.com/id/Whitey_Keybot/"
-              className="-m-1.5 flex items-center p-1.5 lg:flex-1"
+              className="-m-1.5 flex items-center p-1.5"
             >
               <span className="sr-only">Whitey's TF2 Key Bot</span>
-              <img
-                className="h-8 w-auto"
-                src="https://avatars.cloudflare.steamstatic.com/83858abbec5112e8312a787df7d5f47da6f17e62_full.jpg"
-                alt=""
-              />
-              <p className="ml-2 text-white ">Whitey's TF2 Key Bot</p>
+              <img className="h-8 w-auto" src={vars.botImg} alt="avatar" />
+
+              <p className="ml-2 text-white">Whitey's TF2 Key Bot</p>
             </a>
           </div>
           <div className="flex lg:hidden">

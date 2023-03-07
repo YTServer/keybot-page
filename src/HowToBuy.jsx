@@ -12,7 +12,7 @@ export class HowToBuy extends React.Component {
                 先加
                 <a
                   href="steam://friends/add/76561198047686623"
-                  className="m-4 rounded-md bg-lime-300 px-1 py-1 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  className="m-4 rounded-md bg-lime-500 px-1 py-1 text-sm font-semibold text-gray-900 shadow-sm hover:bg-lime-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   √Whitey | TF2 Keys Bot{" "}
                 </a>

@@ -49,7 +49,7 @@ export default function App() {
               className="-m-1.5 flex items-center p-1.5"
             >
               <span className="sr-only">Whitey's TF2 Key Bot</span>
-              <img className="h-8 w-auto" src={vars.botImg} alt="avatar" />
+              <img className="h-8 w-auto" src={vars.botAvatar} alt="avatar" />
 
               <p className="ml-2 text-white">Whitey's TF2 Key Bot</p>
             </a>

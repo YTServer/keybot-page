@@ -1,9 +1,9 @@
 import React from "react";
 
-export class BotScript extends React.Component {
+export default class BotScript extends React.Component {
   render() {
     return (
-      <div id="bot-script">
+      <div id="bot-script" className="h-screen snap-center">
         <div className="container mx-auto mt-28 flex max-w-7xl items-center justify-between p-6 lg:px-8">
           <div className="basis-2/3 pl-40 text-left text-white">
             <p className="text-4xl">Bot 指令</p>

@@ -1,9 +1,9 @@
 import React from "react";
 
-export class QA extends React.Component {
+export default class QA extends React.Component {
   render() {
     return (
-      <div id="qa">
+      <div id="qa" className="h-screen snap-center">
         <div className="container mx-auto mt-28 flex max-w-7xl items-center justify-between p-6 lg:px-8">
           <div className="basis-2/3 pl-40 text-left text-white">
             <p className="text-4xl">Q&A</p>

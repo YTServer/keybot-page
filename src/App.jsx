@@ -116,10 +116,10 @@ export default function App() {
       </header>
       <div className="mx-8 h-4/5">
         <HomePage />
+        <AboutMe />
         <HowToBuy />
         <BotScript />
         <QA />
-        <AboutMe />
       </div>
     </div>
   );

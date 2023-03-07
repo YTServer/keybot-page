@@ -1,7 +1,7 @@
 import { useState, Fragment } from "react";
 import _ from "lodash";
 import { Dialog } from "@headlessui/react";
-import { Bars3Icon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { HomePage } from "./Home";
 import { HowToBuy } from "./HowToBuy";
 import { BotScript } from "./BotScript";
@@ -10,7 +10,7 @@ import { AboutMe } from "./AboutMe";
 import vars from "./variable";
 
 export default function App() {
-  const [setMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   function jumpToBlock(id) {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });

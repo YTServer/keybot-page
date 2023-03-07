@@ -1,5 +1,6 @@
 import React from "react";
-
+import ProfileCard from "./ProfileCard";
+import vars from "./variable";
 export class AboutMe extends React.Component {
   render() {
     return (
@@ -8,7 +9,24 @@ export class AboutMe extends React.Component {
           <div className="basis-2/3 pl-40 text-left text-white">
             <p className="text-4xl">About Me</p>
             <div className="flex flex-col space-y-4 space-x-10">
-
+              <ProfileCard
+                avatar={vars.botAvatar}
+                name="√Whitey | TF2 Keys Bot"
+                title="金鑰機器人"
+                link={vars.botProfile}
+              />
+              <ProfileCard
+                avatar={vars.admAvatar}
+                name="Whitey"
+                title="管理員"
+                link={vars.admProfile}
+              />
+              <ProfileCard
+                avatar={vars.groupAvatar}
+                name="√Whitey Server"
+                title="伺服器群組"
+                link={vars.groupProfile}
+              />
               <div></div>
               <div>
                 管理員：

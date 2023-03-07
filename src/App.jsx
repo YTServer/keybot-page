@@ -1,36 +1,37 @@
 import { useState } from "react";
-import _ from 'lodash';
+import _ from "lodash";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { HomePage } from "./Home";
 import { HowToBuy } from "./HowToBuy";
 import { BotScript } from "./BotScript";
 import { QA } from "./QA";
 import { AboutMe } from "./AboutMe";
-
-
+import vars from "./variable";
 
 export default function App() {
-  const [ setMobileMenuOpen] = useState(false);
+  const [setMobileMenuOpen] = useState(false);
 
   function jumpToBlock(id) {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   }
 
   const navigation = [
-    { name: 'Home', id: 'home' },
-    { name: 'How to buy', id: 'how-to-buy' },
-    { name: 'Bot Script', id: 'bot-script' },
-    { name: 'Q&A', id: 'qa' },
-    { name: 'About Me', id: 'about-me' },
+    { name: "Home", id: "home" },
+    { name: "How to buy", id: "how-to-buy" },
+    { name: "Bot Script", id: "bot-script" },
+    { name: "Q&A", id: "qa" },
+    { name: "About Me", id: "about-me" },
   ];
 
   const navigationItem = _.map(navigation, (item) => {
-    return <a
-      className="text-sm font-semibold leading-6 text-white"
-      onClick={() => jumpToBlock(item.id)}
-    >
-      { item.name }
-    </a>
+    return (
+      <a
+        className="cursor-pointer text-sm font-semibold leading-6 text-white"
+        onClick={() => jumpToBlock(item.id)}
+      >
+        {item.name}
+      </a>
+    );
   });
 
   return (
@@ -43,15 +44,12 @@ export default function App() {
           <div className="flex flex-wrap lg:flex-1 ">
             <a
               href="https://steamcommunity.com/id/Whitey_Keybot/"
-              className="-m-1.5 flex items-center p-1.5 lg:flex-1"
+              className="-m-1.5 flex items-center p-1.5"
             >
               <span className="sr-only">Whitey's TF2 Key Bot</span>
-              <img
-                className="h-8 w-auto"
-                src="https://avatars.cloudflare.steamstatic.com/83858abbec5112e8312a787df7d5f47da6f17e62_full.jpg"
-                alt=""
-              />
-              <p className="ml-2 text-white ">Whitey's TF2 Key Bot</p>
+              <img className="h-8 w-auto" src={vars.botImg} alt="avatar" />
+
+              <p className="ml-2 text-white">Whitey's TF2 Key Bot</p>
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -64,12 +62,10 @@ export default function App() {
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12">
-            { navigationItem }
-          </div>
+          <div className="hidden lg:flex lg:gap-x-12">{navigationItem}</div>
         </nav>
       </header>
-      <div className="h-4/5 mx-8">
+      <div className="mx-8 h-4/5">
         <HomePage />
         <HowToBuy />
         <BotScript />

@@ -3,7 +3,6 @@ import keyBot from "../assets/key.png";
 import { Card } from "./Card";
 
 export default class HomePage extends React.Component {
-  state = {};
   constructor(props) {
     super(props);
     this.state = {
@@ -12,10 +11,13 @@ export default class HomePage extends React.Component {
       orders: 100000,
       loading: true,
     };
+  }
+  
+  componentDidMount() {
     setTimeout(async () => {
       const result = await this.getStat();
       this.setState(result);
-    }, 10000);
+    }, 5000);
   }
 
   getStat() {

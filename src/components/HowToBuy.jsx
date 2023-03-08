@@ -1,9 +1,9 @@
 import React from "react";
 
-export class HowToBuy extends React.Component {
+export default class HowToBuy extends React.Component {
   render() {
     return (
-      <div id="how-to-buy">
+      <div id="how-to-buy" className="h-screen snap-center">
         <div className="container mx-auto mt-28 flex max-w-7xl p-6 lg:px-8">
           <div className="pl-40 text-left text-white">
             <p className="text-4xl">How To Buy</p>

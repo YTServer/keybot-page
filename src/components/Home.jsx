@@ -1,8 +1,8 @@
 import React from "react";
-import keyBot from "./assets/key.png";
+import keyBot from "../assets/key.png";
 import { Card } from "./Card";
 
-export class HomePage extends React.Component {
+export default class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,10 +11,13 @@ export class HomePage extends React.Component {
       orders: 100000,
       loading: true,
     };
+  }
+  
+  componentDidMount() {
     setTimeout(async () => {
       const result = await this.getStat();
       this.setState(result);
-    }, 10000);
+    }, 5000);
   }
 
   getStat() {
@@ -23,13 +26,14 @@ export class HomePage extends React.Component {
         price: 60,
         stock: 100,
         orders: 100000,
+        loading: true,
       });
     });
   }
 
   render() {
     return (
-      <div id="home">
+      <div id="home" className="h-screen snap-center">
         <div className="container mx-auto mt-28 flex max-w-7xl items-center justify-between p-6 lg:px-8">
           <div className="max-sm:hidden md:basis-1/3">
             <img className="aspect-square min-w-full" src={keyBot}></img>

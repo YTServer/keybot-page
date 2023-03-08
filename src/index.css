@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 * {
-  scroll-margin-top: 5rem;
+  scroll-margin-bottom: -10rem;
 }

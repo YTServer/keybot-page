@@ -1,8 +1,9 @@
 import React from "react";
 import _ from "lodash";
 import ProfileCard from "./ProfileCard";
-import vars from "./variable";
-export class AboutMe extends React.Component {
+import vars from "../variable";
+
+export default class AboutMe extends React.Component {
   profiles = [
     {
       avatar: vars.botAvatar,
@@ -36,7 +37,7 @@ export class AboutMe extends React.Component {
   });
   render() {
     return (
-      <div id="about-me">
+      <div id="about-me" className="h-screen snap-center">
         <div className="container mx-auto mt-28">
           <div className="md:pl:20 text-left text-white sm:pl-0 lg:pl-20">
             <p className="text-4xl">About Me</p>

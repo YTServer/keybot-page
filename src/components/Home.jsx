@@ -1,6 +1,7 @@
 import React from "react";
 import keyBot from "../assets/key.png";
 import { Card } from "./Card";
+import axios from "axios";
 
 export default class HomePage extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export default class HomePage extends React.Component {
       loading: true,
     };
   }
-  
+
   componentDidMount() {
     setTimeout(async () => {
       const result = await this.getStat();
@@ -20,15 +21,16 @@ export default class HomePage extends React.Component {
     }, 5000);
   }
 
-  getStat() {
-    return new Promise((resolve, reject) => {
-      resolve({
-        price: 60,
-        stock: 100,
-        orders: 100000,
-        loading: true,
-      });
-    });
+  async getStat() {
+    const res = await axios.get("http://127.0.0.1:8080/api/v1/bot/status");
+    if (res.status === 200) {
+      return {
+        price: res.data.price,
+        stock: res.data.stock,
+        orders: res.data.orders,
+        loading: false,
+      };
+    }
   }
 
   render() {

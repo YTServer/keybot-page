@@ -22,7 +22,7 @@ export default class HomePage extends React.Component {
   }
 
   async getStat() {
-    const res = await axios.get("http://127.0.0.1:8080/api/v1/bot/status");
+    const res = await axios.get("https://tf.whitey.me/api/v1/bot/status");
     if (res.status === 200) {
       return {
         price: res.data.price,

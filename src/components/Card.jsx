@@ -24,12 +24,12 @@ export class Card extends React.Component {
             <p className="text-base font-semibold text-white">
               {this.props?.names}
             </p>
-            <p className="mt-6 flex items-baseline justify-center gap-x-2">
+            <div className="mt-6 flex items-baseline justify-center gap-x-2">
               {this.props.loading ? spinner : number}
               <span className="font-semibold leading-6 tracking-wide text-lime-300 sm:text-xs lg:text-sm">
                 {this.props?.unit}
               </span>
-            </p>
+            </div >
           </div>
         </div>
       </div>

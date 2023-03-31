@@ -17,10 +17,10 @@
     let loadingTimer = setInterval(() => {
       dot = (dot + 1) % 6;
       document.getElementById('stock-element').innerText = `剩餘數量：${'.'.repeat(dot)}`;
-    }, 250); 
+    }, 250);
 
     window.onload = function() {
-      fetch('https://yt-restful.herokuapp.com/')
+      fetch('https://tf.whitey.me/api/v1/bot/status')
         .then(function(response) {
           clearInterval(loadingTimer);
           loadingTimer = null;
@@ -52,12 +52,12 @@
 
         <!-- <p>{{ site.description | default: site.github.project_tagline }}</p> -->
         <div class="info">
-          <h2>出售價格：<strong style="color: red">$ 55</strong></h2>
+          <h2>出售價格：<strong style="color: red">$ 60</strong></h2>
           <h2 id="stock-element">剩餘數量：{{ site: default_stock | default: 300}}</h2>
           <h2>付款方式：7-11、全家、OK、萊爾富代碼繳費</h2>
-          <h2>已完成訂單：322</h2>
+          <h2>已完成訂單：509</h2>
         </div>
-        
+
       </header>
       <section>
 
@@ -65,7 +65,10 @@
 
       </section>
       <footer>
-        <p>聯絡管理員： <a href="https://steamcommunity.com/id/Whitey_-/">Whitey</a></p>
+        <h3>聯絡我：</h3>
+        <p>Steam：<a href="https://steamcommunity.com/id/Whitey_-/">Whitey</a></p>
+        <p>Email： admin@whitey.me</p>
+        <p>網站： <a href="https://tf2key.whitey.me/">https://tf2key.whitey.me/</a></p>
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>

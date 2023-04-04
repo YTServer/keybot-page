@@ -63,7 +63,12 @@ function Navbar() {
           <Bars3Icon className="h-6 w-6 " aria-hidden="true" />
         </button>
       </div>
-      <div className="hidden lg:flex lg:gap-x-12">{navigationItem}</div>
+      <div className="hidden lg:flex lg:gap-x-12">
+        {navigationItem}
+        <button onClick={console.log("login")}>
+          <img src={vars.steamOpenIdButton}></img>
+        </button>
+      </div>
       <Dialog
         as="div"
         className="lg:hidden"

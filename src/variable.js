@@ -5,4 +5,5 @@ export default {
   admProfile: 'https://steamcommunity.com/id/Whitey_Keybot/',
   groupAvatar: 'https://avatars.cloudflare.steamstatic.com/0a7ef40f06363a5aadc36393a7210546a1a72932_full.jpg',
   groupProfile: 'https://steamcommunity.com/groups/Whitey_Server',
+  steamOpenIdButton: 'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/steamworks_docs/tchinese/sits_small.png',
 };

@@ -1,6 +1,13 @@
-import React from "react";
-import loading from "../assets/tf2.png";
+import React from 'react';
+import PropTypes from 'prop-types';
+import loading from '../assets/tf2.png';
 
+Card.propTypes = {
+  names: PropTypes.string.isRequired,
+  number: PropTypes.number.isRequired,
+  unit: PropTypes.string.isRequired,
+  loading: PropTypes.bool.isRequired,
+};
 export class Card extends React.Component {
   constructor(props) {
     super(props);
@@ -29,7 +36,7 @@ export class Card extends React.Component {
               <span className="font-semibold leading-6 tracking-wide text-lime-300 sm:text-xs lg:text-sm">
                 {this.props?.unit}
               </span>
-            </div >
+            </div>
           </div>
         </div>
       </div>

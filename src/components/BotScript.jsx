@@ -1,39 +1,41 @@
-import _ from "lodash";
-import React from "react";
-import vars from "../variable";
-import SubmitIcon from "../assets/submit.svg";
-import DefaultAvatar from "../assets/default_avatar.jpg";
+import _ from 'lodash';
+import React from 'react';
+import PropTypes from 'prop-types';
+import vars from '../variable';
+import SubmitIcon from '../assets/submit.svg';
+import DefaultAvatar from '../assets/default_avatar.jpg';
+
 export default class BotScript extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       messageList: [],
-      inputCommand: "",
+      inputCommand: '',
     };
   }
   commands = [
-    { name: "admin", text: "admin - 顯示管理員 Steam 檔案" },
-    { name: "balance", text: "balance - 顯示尚未領取的商品數量" },
+    { name: 'admin', text: 'admin - 顯示管理員 Steam 檔案' },
+    { name: 'balance', text: 'balance - 顯示尚未領取的商品數量' },
     {
-      name: "buy",
-      text: "buy [數量] - 產生購買 [數量] 的訂單",
-      demo: "buy 10",
+      name: 'buy',
+      text: 'buy [數量] - 產生購買 [數量] 的訂單',
+      demo: 'buy 10',
     },
-    { name: "help", text: "help - 顯示指令列表" },
-    { name: "how", text: "how - 顯示購買流程" },
-    { name: "orders", text: "orders - 顯示尚未完成的訂單資訊" },
-    { name: "price", text: "price - 顯示目前售價" },
+    { name: 'help', text: 'help - 顯示指令列表' },
+    { name: 'how', text: 'how - 顯示購買流程' },
+    { name: 'orders', text: 'orders - 顯示尚未完成的訂單資訊' },
+    { name: 'price', text: 'price - 顯示目前售價' },
     {
-      name: "priceArg",
-      display: "price",
-      demo: "price 10",
-      text: "price [數量] - 顯示購買 [數量] 所需的金額",
+      name: 'priceArg',
+      display: 'price',
+      demo: 'price 10',
+      text: 'price [數量] - 顯示購買 [數量] 所需的金額',
     },
   ];
 
   commandResponse = {
-    admin: "https://steamcommunity.com/id/Whitey_-/",
-    balance: "你還有 ${balance} Key 尚未領取",
+    admin: 'https://steamcommunity.com/id/Whitey_-/',
+    balance: '你還有 ${balance} Key 尚未領取',
     buy: `訂單編號：20200110000000
     訂單數量：10
     單價：70
@@ -75,7 +77,7 @@ export default class BotScript extends React.Component {
     訂單金額：720 (含20元手續費)
     繳費帳號(華南銀行)：0000000000000000
     `,
-    price: "目前售價為每支 70 元",
+    price: '目前售價為每支 70 元',
     priceArg: `使用超商繳費購買10支所需支付的金額為${
       10 * 70 + 28
     }元(含28元手續費)
@@ -88,7 +90,7 @@ export default class BotScript extends React.Component {
     const messageList = [];
     const c = _.find(this.commands, { name: command });
     const displayCommand = c.demo ?? c.name;
-    const response = this.commandResponse[command] ?? "Unknown command";
+    const response = this.commandResponse[command] ?? 'Unknown command';
     messageList.push(
       <Message avatar={DefaultAvatar} name="User" message={displayCommand} />
     );
@@ -161,7 +163,17 @@ export default class BotScript extends React.Component {
   }
 }
 
+Message.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
+};
+
 class Message extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className="mt-2 ml-2 flex  flex-col text-white">

@@ -1,7 +1,7 @@
-import React from "react";
-import keyBot from "../assets/key.png";
-import { Card } from "./Card";
-import axios from "axios";
+import React from 'react';
+import keyBot from '../assets/key.png';
+import { Card } from './Card';
+import axios from 'axios';
 
 export default class HomePage extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ export default class HomePage extends React.Component {
   }
 
   async getStat() {
-    const res = await axios.get("https://tf.whitey.me/api/v1/bot/status");
+    const res = await axios.get('https://tf.whitey.me/api/v1/bot/status');
     if (res.status === 200) {
       return {
         price: res.data.price,

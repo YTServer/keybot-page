@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import vars from "../variable";
+import React, { useState } from 'react';
+import { Dialog } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import vars from '../variable';
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -9,14 +9,14 @@ function Navbar() {
   function jumpToBlock(id) {
     document
       .getElementById(id)
-      ?.scrollIntoView({ behavior: "smooth", block: "center" });
+      ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
   const navigation = [
-    { name: "Home", id: "home" },
-    { name: "How to buy", id: "how-to-buy" },
-    { name: "Bot Script", id: "bot-script" },
-    { name: "Q&A", id: "qa" },
-    { name: "About Me", id: "about-me" },
+    { name: 'Home', id: 'home' },
+    { name: 'How to buy', id: 'how-to-buy' },
+    { name: 'Bot Script', id: 'bot-script' },
+    { name: 'Q&A', id: 'qa' },
+    { name: 'About Me', id: 'about-me' },
   ];
   const navigationItem = navigation.map((item) => {
     return (
@@ -47,10 +47,10 @@ function Navbar() {
     >
       <div className="flex flex-wrap lg:flex-1 ">
         <a href={vars.botProfile} className="-m-1.5 flex items-center p-1.5">
-          <span className="sr-only">Whitey's TF2 Key Bot</span>
+          <span className="sr-only">{vars.botName}</span>
           <img className="h-8 w-auto" src={vars.botAvatar} alt="avatar" />
 
-          <p className="ml-2 text-white">Whitey's TF2 Key Bot</p>
+          <p className="ml-2 text-white">{vars.botName}</p>
         </a>
       </div>
       <div className="flex md:hidden">
@@ -65,7 +65,7 @@ function Navbar() {
       </div>
       <div className="hidden lg:flex lg:gap-x-12">
         {navigationItem}
-        <button onClick={console.log("login")}>
+        <button onClick={console.log('login')}>
           <img src={vars.steamOpenIdButton}></img>
         </button>
       </div>
@@ -83,9 +83,9 @@ function Navbar() {
                 href={vars.botProfile}
                 className="-m-1.5 flex items-center p-1.5 lg:flex-1"
               >
-                <span className="sr-only">Whitey's TF2 Key Bot</span>
+                <span className="sr-only">{vars.botName}</span>
                 <img className="h-8 w-auto" src={vars.botAvatar} alt="avatar" />
-                <p className="ml-2 text-white ">Whitey's TF2 Key Bot</p>
+                <p className="ml-2 text-white ">{vars.botName}</p>
               </a>
             </div>
             <button

@@ -1,5 +1,11 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
+ProfileCard.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
 export default class ProfileCard extends React.Component {
   constructor(props) {
     super(props);

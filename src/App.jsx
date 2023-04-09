@@ -15,9 +15,9 @@ export default class App extends React.Component {
         </header>
 
         <div className="h-screen snap-y snap-mandatory snap-always overflow-y-auto scroll-smooth scrollbar-hide">
-          <BotScript />
           <HomePage />
           <AboutMe />
+          <BotScript />
           <HowToBuy />
           <QA />
         </div>

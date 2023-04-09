@@ -2,12 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import loading from '../assets/tf2.png';
 
-Card.propTypes = {
-  names: PropTypes.string.isRequired,
-  number: PropTypes.number.isRequired,
-  unit: PropTypes.string.isRequired,
-  loading: PropTypes.bool.isRequired,
-};
 export class Card extends React.Component {
   constructor(props) {
     super(props);
@@ -43,3 +37,10 @@ export class Card extends React.Component {
     );
   }
 }
+
+Card.propTypes = {
+  names: PropTypes.string.isRequired,
+  number: PropTypes.number.isRequired,
+  unit: PropTypes.string.isRequired,
+  loading: PropTypes.bool.isRequired,
+};

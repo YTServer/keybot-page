@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import vars from '../variable';
 import SubmitIcon from '../assets/submit.svg';
 import DefaultAvatar from '../assets/default_avatar.jpg';
+import Typed from 'react-typed';
 
 export default class BotScript extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       messageList: [],
-      inputCommand: '',
     };
   }
   commands = [
@@ -87,32 +87,35 @@ export default class BotScript extends React.Component {
 
   setMessageList(command) {
     console.log(`demo ${command}`);
-    const messageList = [];
+    this.messageList = [];
     const c = _.find(this.commands, { name: command });
     const displayCommand = c.demo ?? c.name;
     const response = this.commandResponse[command] ?? 'Unknown command';
-    messageList.push(
-      <Message avatar={DefaultAvatar} name="User" message={displayCommand} />
-    );
-    messageList.push(
+    this.messageList.push(
       <Message
+        key="req"
+        avatar={DefaultAvatar}
+        name="User"
+        message={displayCommand}
+      />
+    );
+    this.messageList.push(
+      <Message
+        key="res"
         avatar={vars.botAvatar}
-        name="√Whitey | TF2 Keys Bot"
+        name={vars.botName}
         message={response}
       />
     );
-
-    this.setState({
-      messageList,
-      inputCommand: displayCommand,
-    });
+    this.typed.strings = [displayCommand];
+    this.typed.reset();
   }
 
   render() {
     return (
       <div id="bot-script" className="h-screen snap-center">
         <div className="container mx-auto mt-28 flex max-w-7xl items-center justify-between p-6 lg:px-8">
-          <div className="basis-2/3 pl-40 text-left text-white">
+          <div className="basis-3/5 pl-40 text-left text-white">
             <p className="text-4xl">Bot 指令</p>
             <ul className="mt-10 flex list-disc flex-col space-y-4">
               {this.commands.map((command, index) => {
@@ -135,14 +138,12 @@ export default class BotScript extends React.Component {
               })}
             </ul>
           </div>
-          <div className="flex h-96 w-96 flex-col bg-[#1F2126]">
+          <div className="flex h-auto min-h-[24rem] w-96 basis-2/5 flex-col bg-[#1F2126]">
             <div className="pointer-events-none flex h-12 flex-col-reverse border-b-4 border-[#3A3E46] bg-[#151B25]">
-              <div className="flex h-9 w-48 items-center rounded-t bg-[#3A3E46]">
+              <div className="flex h-9 w-48 items-center place-self-start rounded-t bg-[#3A3E46]">
                 <img className="mx-2 h-6 w-6" src={vars.botAvatar}></img>
                 <div>
-                  <p className="text-xs text-[#D2EBB5]">
-                    √Whitey | TF2 Keys Bot
-                  </p>
+                  <p className="text-xs text-[#D2EBB5]">{vars.botName}</p>
                   <p className="text-xs text-[#91C257]">售價：60 | 庫存：100</p>
                 </div>
               </div>
@@ -150,7 +151,19 @@ export default class BotScript extends React.Component {
             <div className="flex-grow">{this.state.messageList}</div>
             <div className="h-16 border border-black bg-[#22252B] p-1">
               <div className="flex h-full w-full items-center border border-black bg-[#1B1C20] p-0.5">
-                <div className="flex-grow self-baseline text-white"></div>
+                <div className="flex-grow self-baseline text-white">
+                  <Typed
+                    typedRef={(typed) => {
+                      this.typed = typed;
+                    }}
+                    strings={['']}
+                    typeSpeed={40}
+                    onComplete={() => {
+                      this.setState({ messageList: this.messageList });
+                      console.log('complete');
+                    }}
+                  />
+                </div>
                 <div className="flex h-11 w-11 items-center justify-center border border-black bg-[#2C3036]">
                   <img className="h-6 w-6 text-white" src={SubmitIcon} />
                 </div>
@@ -162,12 +175,6 @@ export default class BotScript extends React.Component {
     );
   }
 }
-
-Message.propTypes = {
-  avatar: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired,
-};
 
 class Message extends React.Component {
   constructor(props) {
@@ -188,3 +195,9 @@ class Message extends React.Component {
     );
   }
 }
+
+Message.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
+};

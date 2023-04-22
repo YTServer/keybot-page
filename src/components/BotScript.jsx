@@ -106,7 +106,7 @@ export default class BotScript extends React.Component {
 
   render() {
     return (
-      <div id="bot-script" className="">
+      <div id="script" className="">
         <div className="flex justify-between">
           <div className="text-left text-white">
             <p className="text-4xl">Bot 指令</p>

@@ -5,3 +5,7 @@
 * {
   scroll-margin-bottom: -10rem;
 }
+
+html {
+  scroll-behavior: smooth;
+}

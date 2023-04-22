@@ -4,7 +4,7 @@ import BuyProcessCard from './BuyProcessCard';
 export default class HowToBuy extends React.Component {
   render() {
     return (
-      <div id="how-to-buy">
+      <div id="buy">
         <BuyProcessCard />
       </div>
     );

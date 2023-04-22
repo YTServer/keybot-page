@@ -13,10 +13,10 @@ function Navbar() {
   }
   const navigation = [
     { name: 'Home', id: 'home' },
-    { name: 'How to buy', id: 'how-to-buy' },
-    { name: 'Bot Script', id: 'bot-script' },
+    { name: 'How to buy', id: 'buy' },
+    { name: 'Bot Script', id: 'script' },
     { name: 'Q&A', id: 'qa' },
-    { name: 'About Me', id: 'about-me' },
+    { name: 'About Me', id: 'about' },
   ];
   const navigationItem = navigation.map((item) => {
     return (
@@ -24,6 +24,7 @@ function Navbar() {
         key={item.id}
         className="cursor-pointer text-sm font-semibold leading-6 text-white"
         onClick={() => jumpToBlock(item.id)}
+        href={'#' + item.id}
       >
         {item.name}
       </a>

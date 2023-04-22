@@ -37,7 +37,7 @@ export default class AboutMe extends React.Component {
   });
   render() {
     return (
-      <div id="about-me">
+      <div id="about">
         <div className="container mx-auto">
           <div className="text-left text-white">
             <p className="text-4xl">About Me</p>

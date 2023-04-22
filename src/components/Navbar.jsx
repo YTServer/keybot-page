@@ -6,11 +6,6 @@ import vars from '../variable';
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  function jumpToBlock(id) {
-    document
-      .getElementById(id)
-      ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
   const navigation = [
     { name: 'Home', id: 'home' },
     { name: 'How to buy', id: 'buy' },
@@ -23,7 +18,6 @@ function Navbar() {
       <a
         key={item.id}
         className="cursor-pointer text-sm font-semibold leading-6 text-white"
-        onClick={() => jumpToBlock(item.id)}
         href={'#' + item.id}
       >
         {item.name}
@@ -35,7 +29,7 @@ function Navbar() {
       <a
         key={item.id}
         className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black"
-        onClick={() => jumpToBlock(item.id)}
+        href={'#' + item.id}
       >
         {item.name}
       </a>

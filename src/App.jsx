@@ -5,6 +5,7 @@ import BotScript from './components/BotScript';
 import QA from './components/QA';
 import AboutMe from './components/AboutMe';
 import Navbar from './components/Navbar';
+import { EnvelopeIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 
 export default class App extends React.Component {
   render() {
@@ -16,14 +17,26 @@ export default class App extends React.Component {
 
         <div className="flex snap-y snap-mandatory snap-always flex-col scroll-smooth px-8">
           <HomePage />
-          <AboutMe />
           <BotScript />
           <HowToBuy />
           <QA />
+          <AboutMe />
         </div>
         <footer>
-          <div className="py-4 text-center text-gray-400">
-            © 2023 Whitey. All rights reserved.
+          <div className="py-4 text-gray-400">
+            <div className="flex flex-col items-center">
+              <div>
+                <div className="flex items-center text-gray-500">
+                  <EnvelopeIcon className="h-6 w-6" />
+                  <p className="ml-2">admin@whitey.me</p>
+                </div>
+                <div className="flex items-center text-gray-500">
+                  <GlobeAltIcon className="h-6 w-6" />
+                  <p className="ml-2">https://tf2key.whitey.me/</p>
+                </div>
+              </div>
+              <p>© 2023 Whitey. All rights reserved.</p>
+            </div>
           </div>
         </footer>
       </div>

@@ -14,13 +14,18 @@ export default class App extends React.Component {
           <Navbar />
         </header>
 
-        <div className="h-screen snap-y snap-mandatory snap-always overflow-y-auto scroll-smooth scrollbar-hide">
+        <div className="flex snap-y snap-mandatory snap-always flex-col scroll-smooth px-8">
           <HomePage />
           <AboutMe />
           <BotScript />
           <HowToBuy />
           <QA />
         </div>
+        <footer>
+          <div className="py-4 text-center text-gray-400">
+            © 2023 Whitey. All rights reserved.
+          </div>
+        </footer>
       </div>
     );
   }

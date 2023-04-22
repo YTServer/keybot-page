@@ -63,25 +63,18 @@ export default class BotScript extends React.Component {
     ※ 如果交易遭到託管，請勿中途取消
     ※ 如果有任何問題歡迎加管理員好友詢問`,
 
-    orders: `尚未完成的訂單數量：2
+    orders: `尚未完成的訂單數量：1
 
     訂單編號：20200110000000
     訂單數量：10
     單價：70
     訂單金額：728 (含28元手續費)
     繳費代碼：TEST1234567890
-
-    訂單編號：20200110000000
-    訂單數量：10
-    單價：70
-    訂單金額：720 (含20元手續費)
-    繳費帳號(華南銀行)：0000000000000000
     `,
     price: '目前售價為每支 70 元',
     priceArg: `使用超商繳費購買10支所需支付的金額為${
       10 * 70 + 28
     }元(含28元手續費)
-    使用ATM繳費購買10支所需支付的金額為${10 * 70 + 20}元(含20元手續費)
     `,
   };
 
@@ -113,15 +106,15 @@ export default class BotScript extends React.Component {
 
   render() {
     return (
-      <div id="bot-script" className="h-screen snap-center">
-        <div className="container mx-auto mt-28 flex max-w-7xl items-center justify-between p-6 lg:px-8">
-          <div className="basis-3/5 pl-40 text-left text-white">
+      <div id="bot-script" className="">
+        <div className="flex justify-between">
+          <div className="text-left text-white">
             <p className="text-4xl">Bot 指令</p>
             <ul className="mt-10 flex list-disc flex-col space-y-4">
               {this.commands.map((command, index) => {
                 if (this.commandResponse[command.name]) {
                   return (
-                    <li key={index}>
+                    <li className="list-inside" key={index}>
                       <a
                         className="cursor-pointer font-bold underline"
                         key={index}
@@ -138,7 +131,7 @@ export default class BotScript extends React.Component {
               })}
             </ul>
           </div>
-          <div className="flex h-auto min-h-[24rem] w-96 basis-2/5 flex-col bg-[#1F2126]">
+          <div className="flex h-auto min-h-[28rem] w-96 flex-col bg-[#1F2126]">
             <div className="pointer-events-none flex h-12 flex-col-reverse border-b-4 border-[#3A3E46] bg-[#151B25]">
               <div className="flex h-9 w-48 items-center place-self-start rounded-t bg-[#3A3E46]">
                 <img className="mx-2 h-6 w-6" src={vars.botAvatar}></img>
@@ -183,7 +176,7 @@ class Message extends React.Component {
 
   render() {
     return (
-      <div className="mt-2 ml-2 flex  flex-col text-white">
+      <div className="my-2 ml-2 flex  flex-col text-white">
         <div className="flex">
           <img src={this.props.avatar} className="h-6 w-6"></img>
           <p className="ml-0.5 text-sm text-[#6a8f40]">{this.props.name}</p>

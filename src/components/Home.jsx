@@ -14,11 +14,9 @@ export default class HomePage extends React.Component {
     };
   }
 
-  componentDidMount() {
-    setTimeout(async () => {
-      const result = await this.getStat();
-      this.setState(result);
-    }, 5000);
+  async componentDidMount() {
+    const result = await this.getStat();
+    this.setState(result);
   }
 
   async getStat() {
@@ -35,8 +33,8 @@ export default class HomePage extends React.Component {
 
   render() {
     return (
-      <div id="home" className="h-screen snap-center">
-        <div className="container mx-auto mt-28 flex max-w-7xl items-center justify-between p-6 lg:px-8">
+      <div id="home" className="">
+        <div className="container mx-auto mt-28 flex max-w-7xl items-center justify-between">
           <div className="max-sm:hidden md:basis-1/3">
             <img className="aspect-square min-w-full" src={keyBot}></img>
           </div>
@@ -54,7 +52,7 @@ export default class HomePage extends React.Component {
             </a>
           </div>
         </div>
-        <div className="flex max-w-full flex-row items-center justify-center sm:p-4 lg:p-6 lg:px-8">
+        <div className="flex max-w-full flex-row items-center justify-center">
           <Card
             names="售價"
             loading={this.state.loading}

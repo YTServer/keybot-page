@@ -37,11 +37,11 @@ export default class AboutMe extends React.Component {
   });
   render() {
     return (
-      <div id="about-me" className="h-screen snap-center">
-        <div className="container mx-auto mt-28">
-          <div className="md:pl:20 text-left text-white sm:pl-0 lg:pl-20">
+      <div id="about-me">
+        <div className="container mx-auto">
+          <div className="text-left text-white">
             <p className="text-4xl">About Me</p>
-            <div className="flex">{this.profileCards}</div>
+            <div className="flex justify-center">{this.profileCards}</div>
           </div>
         </div>
       </div>

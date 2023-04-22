@@ -2,7 +2,6 @@ import React from 'react';
 import _ from 'lodash';
 import ProfileCard from './ProfileCard';
 import vars from '../variable';
-import { EnvelopeIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 
 export default class AboutMe extends React.Component {
   profiles = [
@@ -44,16 +43,6 @@ export default class AboutMe extends React.Component {
             <p className="text-4xl">Content</p>
             <div className="flex">
               <div className="flex flex-col">{this.profileCards}</div>
-              <div>
-                <div className="flex items-center text-gray-500">
-                  <EnvelopeIcon className="h-8 w-8" />
-                  <p className="ml-2">admin@whitey.me</p>
-                </div>
-                <div className="flex items-center text-gray-500">
-                  <GlobeAltIcon className="h-8 w-8" />
-                  <p className="ml-2">https://tf2key.whitey.me/</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

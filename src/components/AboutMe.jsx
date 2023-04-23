@@ -10,18 +10,21 @@ export default class AboutMe extends React.Component {
       name: 'Whitey',
       title: '管理員',
       link: vars.admProfile,
+      actionTitle: '新增好友',
     },
     {
       avatar: vars.botAvatar,
       name: '√Whitey | TF2 Keys Bot',
       title: '金鑰機器人',
       link: vars.botProfile,
+      actionTitle: '新增好友',
     },
     {
       avatar: vars.groupAvatar,
       name: '√Whitey Server',
       title: '伺服器群組',
       link: vars.groupProfile,
+      actionTitle: '加入群組',
     },
   ];
   profileCards = _.map(this.profiles, (p, index) => {
@@ -32,6 +35,7 @@ export default class AboutMe extends React.Component {
         name={p.name}
         title={p.title}
         link={p.link}
+        actionTitle={p.actionTitle}
       ></ProfileCard>
     );
   });
@@ -41,9 +45,7 @@ export default class AboutMe extends React.Component {
         <div className="container mx-auto">
           <div className="text-left text-white">
             <p className="text-4xl">Content</p>
-            <div className="flex">
-              <div className="flex flex-col">{this.profileCards}</div>
-            </div>
+            <div className="flex basis-auto gap-4">{this.profileCards}</div>
           </div>
         </div>
       </div>

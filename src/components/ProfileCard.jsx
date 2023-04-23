@@ -8,16 +8,24 @@ export default class ProfileCard extends React.Component {
 
   render() {
     return (
-      <div className="p-2 lg:mt-0">
-        <div className="rounded-2xl bg-sky-900 py-4 ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:py-8">
-          <div className="flex max-w-xs sm:px-4 lg:px-8">
-            <img className="w-12" src={this.props.avatar}></img>
-            <div className="ml-2">
-              <a className="hover:text-gray-200" href={this.props.link}>
-                {this.props?.name}
-              </a>
-              <p>{this.props?.title}</p>
-            </div>
+      <div className="w-full max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+        <div className="flex flex-col items-center pb-10 pt-4">
+          <img
+            className="mb-3 h-24 w-24 rounded-full shadow-lg"
+            src={this.props.avatar}
+            alt="avatar"
+          />
+          <h5 className="mb-1 whitespace-nowrap text-xl font-medium text-white">
+            {this.props.name}
+          </h5>
+          <span className="text-sm text-gray-400">{this.props.title}</span>
+          <div className="mt-4 flex space-x-3 md:mt-6">
+            <a
+              href={this.props.link}
+              className="inline-flex items-center rounded-lg bg-blue-700 px-4 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              {this.props.actionTitle}
+            </a>
           </div>
         </div>
       </div>
@@ -30,4 +38,5 @@ ProfileCard.propTypes = {
   name: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
+  actionTitle: PropTypes.string.isRequired,
 };

@@ -42,12 +42,10 @@ export default class AboutMe extends React.Component {
   render() {
     return (
       <div id="about">
-        <div className="container mx-auto">
-          <div className="text-left text-white">
-            <p className="text-4xl">Content</p>
-            <div className="flex basis-auto gap-4">{this.profileCards}</div>
-          </div>
-        </div>
+        <h2 className="text-center text-4xl font-bold text-white">聯絡我們</h2>
+        <section className="flex basis-auto justify-center gap-4">
+          {this.profileCards}
+        </section>
       </div>
     );
   }

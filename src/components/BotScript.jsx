@@ -107,10 +107,10 @@ export default class BotScript extends React.Component {
   render() {
     return (
       <div id="script" className="">
-        <div className="flex justify-between">
-          <div className="text-left text-white">
-            <p className="text-4xl">Bot 指令</p>
-            <ul className="mt-10 flex list-disc flex-col space-y-4">
+        <h2 className="text-center text-4xl font-bold text-white">指令列表</h2>
+        <section className="bg-gray-900">
+          <div className="mx-auto max-w-screen-xl items-center gap-8 py-8 px-4 sm:py-16 md:grid md:grid-cols-2 lg:px-6 xl:gap-16">
+            <ul className="flex list-disc flex-col space-y-4 text-left text-white">
               {this.commands.map((command, index) => {
                 if (this.commandResponse[command.name]) {
                   return (
@@ -130,40 +130,42 @@ export default class BotScript extends React.Component {
                 }
               })}
             </ul>
-          </div>
-          <div className="flex h-auto min-h-[28rem] w-96 flex-col bg-[#1F2126]">
-            <div className="pointer-events-none flex h-12 flex-col-reverse border-b-4 border-[#3A3E46] bg-[#151B25]">
-              <div className="flex h-9 w-48 items-center place-self-start rounded-t bg-[#3A3E46]">
-                <img className="mx-2 h-6 w-6" src={vars.botAvatar}></img>
-                <div>
-                  <p className="text-xs text-[#D2EBB5]">{vars.botName}</p>
-                  <p className="text-xs text-[#91C257]">售價：60 | 庫存：100</p>
+
+            <div className="hidden h-auto min-h-[28rem] w-full flex-col bg-[#1F2126] md:flex">
+              <div className="pointer-events-none flex h-12 flex-col-reverse border-b-4 border-[#3A3E46] bg-[#151B25]">
+                <div className="flex h-9 w-48 items-center place-self-start rounded-t bg-[#3A3E46]">
+                  <img className="mx-2 h-6 w-6" src={vars.botAvatar}></img>
+                  <div>
+                    <p className="text-xs text-[#D2EBB5]">{vars.botName}</p>
+                    <p className="text-xs text-[#91C257]">
+                      售價：60 | 庫存：100
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex-grow">{this.state.messageList}</div>
+              <div className="h-16 border border-black bg-[#22252B] p-1">
+                <div className="flex h-full w-full items-center border border-black bg-[#1B1C20] p-0.5">
+                  <div className="flex-grow self-baseline text-white">
+                    <Typed
+                      typedRef={(typed) => {
+                        this.typed = typed;
+                      }}
+                      strings={['']}
+                      typeSpeed={40}
+                      onComplete={() => {
+                        this.setState({ messageList: this.messageList });
+                      }}
+                    />
+                  </div>
+                  <div className="flex h-11 w-11 items-center justify-center border border-black bg-[#2C3036]">
+                    <img className="h-6 w-6 text-white" src={SubmitIcon} />
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="flex-grow">{this.state.messageList}</div>
-            <div className="h-16 border border-black bg-[#22252B] p-1">
-              <div className="flex h-full w-full items-center border border-black bg-[#1B1C20] p-0.5">
-                <div className="flex-grow self-baseline text-white">
-                  <Typed
-                    typedRef={(typed) => {
-                      this.typed = typed;
-                    }}
-                    strings={['']}
-                    typeSpeed={40}
-                    onComplete={() => {
-                      this.setState({ messageList: this.messageList });
-                      console.log('complete');
-                    }}
-                  />
-                </div>
-                <div className="flex h-11 w-11 items-center justify-center border border-black bg-[#2C3036]">
-                  <img className="h-6 w-6 text-white" src={SubmitIcon} />
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
+        </section>
       </div>
     );
   }

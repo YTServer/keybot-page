@@ -110,27 +110,31 @@ export default class BotScript extends React.Component {
         <h2 className="text-center text-4xl font-bold text-white">指令列表</h2>
         <section className="bg-gray-900">
           <div className="mx-auto max-w-screen-xl items-center gap-8 py-8 px-4 sm:py-16 md:grid md:grid-cols-2 lg:px-6 xl:gap-16">
-            <ul className="flex list-disc flex-col space-y-4 text-left text-white">
-              {this.commands.map((command, index) => {
-                if (this.commandResponse[command.name]) {
-                  return (
-                    <li className="list-inside" key={index}>
-                      <a
-                        className="cursor-pointer font-bold underline"
-                        key={index}
-                        onClick={() => this.setMessageList(command.name)}
-                      >
-                        {command.display ?? command.name}
-                      </a>
-                      {command.text.split(command.display ?? command.name)[1]}
-                    </li>
-                  );
-                } else {
-                  return <li key={index}>{command.text}</li>;
-                }
-              })}
-            </ul>
-
+            <div>
+              <h3 className="mb-4 hidden text-xl text-white md:block">
+                點擊指令可以預覽結果
+              </h3>
+              <ul className="flex list-disc flex-col space-y-4 text-left text-gray-400 ">
+                {this.commands.map((command, index) => {
+                  if (this.commandResponse[command.name]) {
+                    return (
+                      <li className="list-inside" key={index}>
+                        <a
+                          className="cursor-pointer sm:font-bold md:text-white md:underline"
+                          key={index}
+                          onClick={() => this.setMessageList(command.name)}
+                        >
+                          {command.display ?? command.name}
+                        </a>
+                        {command.text.split(command.display ?? command.name)[1]}
+                      </li>
+                    );
+                  } else {
+                    return <li key={index}>{command.text}</li>;
+                  }
+                })}
+              </ul>
+            </div>
             <div className="hidden h-auto min-h-[28rem] w-full flex-col bg-[#1F2126] md:flex">
               <div className="pointer-events-none flex h-12 flex-col-reverse border-b-4 border-[#3A3E46] bg-[#151B25]">
                 <div className="flex h-9 w-48 items-center place-self-start rounded-t bg-[#3A3E46]">

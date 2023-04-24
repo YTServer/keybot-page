@@ -81,7 +81,7 @@ export default class QA extends React.Component {
 
   render() {
     return (
-      <div id="qa">
+      <div id="faq">
         <h2 className="text-center text-4xl font-bold text-white">常見問題</h2>
         <section className="mx-auto max-w-screen-xl items-center py-8 px-4 sm:py-16 lg:px-6">
           {this.state.accordionItems}

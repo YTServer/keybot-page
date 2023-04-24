@@ -5,10 +5,10 @@ import { fetchBotStatus } from './models/reducer';
 import HomePage from './components/Home';
 import HowToBuy from './components/HowToBuy';
 import BotScript from './components/BotScript';
-import QA from './components/QA';
+import FAQ from './components/faq';
 import AboutMe from './components/AboutMe';
 import Navbar from './components/Navbar';
-import { EnvelopeIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon } from '@heroicons/react/24/outline';
 
 class App extends React.Component {
   constructor(props) {
@@ -28,9 +28,9 @@ class App extends React.Component {
 
         <div className="flex snap-y snap-mandatory snap-always flex-col gap-12 scroll-smooth px-8">
           <HomePage />
-          <BotScript />
           <HowToBuy />
-          <QA />
+          <BotScript />
+          <FAQ />
           <AboutMe />
         </div>
         <footer className="m-4 rounded-lg bg-white shadow dark:bg-gray-900">
@@ -45,23 +45,6 @@ class App extends React.Component {
             </span>
           </div>
         </footer>
-        {/* <footer>
-          <div className="py-4 text-gray-400">
-            <div className="flex flex-col items-center">
-              <div>
-                <div className="flex items-center text-gray-500">
-                  <EnvelopeIcon className="h-6 w-6" />
-                  <p className="ml-2">admin@whitey.me</p>
-                </div>
-                <div className="flex items-center text-gray-500">
-                  <GlobeAltIcon className="h-6 w-6" />
-                  <p className="ml-2">https://tf2key.whitey.me/</p>
-                </div>
-              </div>
-              <p>© 2023 Whitey. All rights reserved.</p>
-            </div>
-          </div>
-        </footer> */}
       </div>
     );
   }

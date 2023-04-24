@@ -7,11 +7,10 @@ function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigation = [
-    { name: 'Home', id: 'home' },
-    { name: 'How to buy', id: 'buy' },
-    { name: 'Bot Script', id: 'script' },
-    { name: 'Q&A', id: 'qa' },
-    { name: 'About Me', id: 'about' },
+    { name: '購買流程', id: 'buy' },
+    { name: '指令列表', id: 'script' },
+    { name: '常見問題', id: 'faq' },
+    { name: '聯絡我們', id: 'about' },
   ];
   const navigationItem = navigation.map((item) => {
     return (
@@ -41,9 +40,13 @@ function Navbar() {
       aria-label="Global"
     >
       <div className="flex flex-wrap lg:flex-1 ">
-        <a href={vars.botProfile} className="-m-1.5 flex items-center p-1.5">
+        <a href="#home" className="-m-1.5 flex items-center p-1.5">
           <span className="sr-only">{vars.botName}</span>
-          <img className="h-8 w-auto" src={vars.botAvatar} alt="avatar" />
+          <img
+            className="h-8 w-auto rounded-full"
+            src={vars.botAvatar}
+            alt="avatar"
+          />
 
           <p className="ml-2 text-white">{vars.botName}</p>
         </a>

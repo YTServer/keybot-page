@@ -2,10 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  scroll-margin-bottom: -10rem;
-}
-
 html {
+  scroll-padding-top: 7rem;
   scroll-behavior: smooth;
 }

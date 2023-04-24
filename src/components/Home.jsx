@@ -56,12 +56,12 @@ class HomePage extends React.Component {
 }
 
 HomePage.propTypes = {
-  botStatus: {
+  botStatus: PropTypes.shape({
     price: PropTypes.number.isRequired,
     stock: PropTypes.number.isRequired,
     orders: PropTypes.number.isRequired,
     loading: PropTypes.bool.isRequired,
-  },
+  }).isRequired,
 };
 
 const mapStateToProps = (state) => {

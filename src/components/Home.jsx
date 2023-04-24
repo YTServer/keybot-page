@@ -11,7 +11,7 @@ class HomePage extends React.Component {
 
   render() {
     return (
-      <div id="home" className="">
+      <div id="home">
         <section className="mt-28 bg-gray-900">
           <div className="mx-auto grid max-w-screen-xl px-4 py-8 lg:grid-cols-12 lg:gap-8 lg:py-16 xl:gap-0">
             <div className="mr-auto place-self-center lg:col-span-7">

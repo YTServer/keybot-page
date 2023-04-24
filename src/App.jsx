@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { fetchBotStatus } from './models/reducer';
 import HomePage from './components/Home';
 import HowToBuy from './components/HowToBuy';
 import BotScript from './components/BotScript';
@@ -7,7 +10,15 @@ import AboutMe from './components/AboutMe';
 import Navbar from './components/Navbar';
 import { EnvelopeIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 
-export default class App extends React.Component {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    this.props.fetchBotStatus();
+  }
+
   render() {
     return (
       <div className="min-h-full scrollbar-hide">
@@ -43,3 +54,11 @@ export default class App extends React.Component {
     );
   }
 }
+
+App.propTypes = {
+  fetchBotStatus: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = { fetchBotStatus };
+
+export default connect(null, mapDispatchToProps)(App);

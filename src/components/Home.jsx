@@ -1,34 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import keyBot from '../assets/key.png';
 import { Card } from './Card';
-import axios from 'axios';
-
-export default class HomePage extends React.Component {
+import { connect } from 'react-redux';
+import { selectStatus } from '../models/reducer';
+class HomePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      price: 55,
-      stock: 100,
-      orders: 100000,
-      loading: true,
-    };
-  }
-
-  async componentDidMount() {
-    const result = await this.getStat();
-    this.setState(result);
-  }
-
-  async getStat() {
-    const res = await axios.get('https://tf.whitey.me/api/v1/bot/status');
-    if (res.status === 200) {
-      return {
-        price: res.data.price,
-        stock: res.data.stock,
-        orders: res.data.orders,
-        loading: false,
-      };
-    }
   }
 
   render() {
@@ -52,18 +30,18 @@ export default class HomePage extends React.Component {
               <div className="mt-4 flex max-w-full flex-row items-center justify-center">
                 <Card
                   names="售價"
-                  loading={this.state.loading}
-                  number={this.state.price}
+                  loading={this.props.botStatus.loading}
+                  number={this.props.botStatus.price}
                 />
                 <Card
                   names="庫存"
-                  loading={this.state.loading}
-                  number={this.state.stock}
+                  loading={this.props.botStatus.loading}
+                  number={this.props.botStatus.stock}
                 />
                 <Card
                   names="成交量"
-                  loading={this.state.loading}
-                  number={this.state.orders}
+                  loading={this.props.botStatus.loading}
+                  number={this.props.botStatus.orders}
                 />
               </div>
             </div>
@@ -76,3 +54,20 @@ export default class HomePage extends React.Component {
     );
   }
 }
+
+HomePage.propTypes = {
+  botStatus: {
+    price: PropTypes.number.isRequired,
+    stock: PropTypes.number.isRequired,
+    orders: PropTypes.number.isRequired,
+    loading: PropTypes.bool.isRequired,
+  },
+};
+
+const mapStateToProps = (state) => {
+  return {
+    botStatus: selectStatus(state),
+  };
+};
+
+export default connect(mapStateToProps)(HomePage);

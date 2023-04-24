@@ -43,7 +43,7 @@ export default class AboutMe extends React.Component {
     return (
       <div id="about">
         <h2 className="text-center text-4xl font-bold text-white">聯絡我們</h2>
-        <section className="flex basis-auto justify-center gap-4 py-8 px-4 sm:py-16 lg:px-6">
+        <section className="flex basis-auto flex-col justify-center gap-4 py-8 px-4 sm:py-16 md:flex-row lg:px-6">
           {this.profileCards}
         </section>
       </div>

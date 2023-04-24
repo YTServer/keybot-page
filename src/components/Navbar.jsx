@@ -29,6 +29,7 @@ function Navbar() {
         key={item.id}
         className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black"
         href={'#' + item.id}
+        onClick={() => setMobileMenuOpen(false)}
       >
         {item.name}
       </a>
@@ -39,7 +40,7 @@ function Navbar() {
       className="flex items-center justify-between p-6 lg:px-8"
       aria-label="Global"
     >
-      <div className="flex flex-wrap lg:flex-1 ">
+      <div className="flex flex-wrap lg:flex-1">
         <a href="#home" className="-m-1.5 flex items-center p-1.5">
           <span className="sr-only">{vars.botName}</span>
           <img
@@ -61,9 +62,9 @@ function Navbar() {
           <Bars3Icon className="h-6 w-6 " aria-hidden="true" />
         </button>
       </div>
-      <div className="hidden lg:flex lg:gap-x-12">
+      <div className="hidden md:flex md:gap-x-4 lg:gap-x-12">
         {navigationItem}
-        <button onClick={console.log('login')}>
+        <button className="hidden" onClick={console.log('login')}>
           <img src={vars.steamOpenIdButton}></img>
         </button>
       </div>
@@ -78,11 +79,16 @@ function Navbar() {
           <div className="flex items-center justify-between">
             <div className="flex flex-wrap lg:flex-1 ">
               <a
-                href={vars.botProfile}
+                href="#home"
                 className="-m-1.5 flex items-center p-1.5 lg:flex-1"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">{vars.botName}</span>
-                <img className="h-8 w-auto" src={vars.botAvatar} alt="avatar" />
+                <img
+                  className="h-8 w-auto rounded-full"
+                  src={vars.botAvatar}
+                  alt="avatar"
+                />
                 <p className="ml-2 text-white ">{vars.botName}</p>
               </a>
             </div>

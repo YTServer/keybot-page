@@ -15,7 +15,7 @@ class HomePage extends React.Component {
         <section className="mt-28 bg-gray-900">
           <div className="mx-auto grid max-w-screen-xl px-4 py-8 lg:grid-cols-12 lg:gap-8 lg:py-16 xl:gap-0">
             <div className="mr-auto place-self-center lg:col-span-7">
-              <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">
+              <h1 className="mb-4 max-w-2xl text-3xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">
                 Whitey&apos;s TF2 Key Bot
               </h1>
               <p className="mb-6 max-w-2xl font-light text-gray-400 md:text-lg lg:mb-8 lg:text-xl">

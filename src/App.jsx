@@ -26,7 +26,7 @@ class App extends React.Component {
           <Navbar />
         </header>
 
-        <div className="flex snap-y snap-mandatory snap-always flex-col gap-12 scroll-smooth px-8">
+        <div className="flex snap-y snap-mandatory snap-always flex-col gap-12 scroll-smooth px-4 md:px-8">
           <HomePage />
           <HowToBuy />
           <BotScript />
@@ -40,7 +40,7 @@ class App extends React.Component {
               <EnvelopeIcon className="h-6 w-6" />
               <p className="ml-2">admin@whitey.me</p>
             </div>
-            <span className="block text-sm text-gray-500 dark:text-gray-400 sm:text-center">
+            <span className="block text-center text-sm text-gray-400">
               © 2023 Whitey. All rights reserved.
             </span>
           </div>

@@ -37,7 +37,34 @@ export default class QA extends React.Component {
       question: '如何列印繳費單？',
       open: false,
       answer: (
-        <p className="text-gray-400">請參考以下連結，依照網站中的圖操作即可</p>
+        <>
+          <p className="mb-2 text-gray-400">
+            請參考以下連結，依照網站中的圖操作即可
+          </p>
+          <ul className="flex list-inside list-disc flex-col space-y-4 text-left text-white underline">
+            <li>
+              <a href="https://www.newebpay.com/info/site_description/seven_ibon_embedded">
+                7-11
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.newebpay.com/info/site_description/family_embedded">
+                全家
+              </a>
+            </li>
+            <li>
+              <a href="https://www.newebpay.com/info/site_description/okshop_embedded">
+                OK
+              </a>
+            </li>
+            <li>
+              <a href="https://www.newebpay.com/info/site_description/hilife_embedded">
+                萊爾富
+              </a>
+            </li>
+          </ul>
+        </>
       ),
     },
     {

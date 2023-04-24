@@ -126,18 +126,19 @@ class BotScript extends React.Component {
             <h3 className="mb-4 hidden text-xl text-white md:block">
               點擊指令可以預覽結果
             </h3>
-            <ul className="flex list-disc flex-col space-y-4 text-left text-gray-400 ">
+            <ul className="flex list-disc flex-col space-y-4 text-left text-gray-400">
               {this.commands.map((command, index) => {
                 if (this.getCommandResponse(command.name)) {
                   return (
                     <li className="list-inside" key={index}>
-                      <a
+                      <button
+                        type="button"
                         className="cursor-pointer sm:font-bold md:text-white md:underline"
                         key={index}
                         onClick={() => this.setMessageList(command.name)}
                       >
                         {command.display ?? command.name}
-                      </a>
+                      </button>
                       {command.text.split(command.display ?? command.name)[1]}
                     </li>
                   );
@@ -150,7 +151,11 @@ class BotScript extends React.Component {
           <div className="hidden h-auto min-h-[28rem] w-full flex-col bg-[#1F2126] md:flex">
             <div className="pointer-events-none flex h-12 flex-col-reverse border-b-4 border-[#3A3E46] bg-[#151B25]">
               <div className="flex h-9 w-48 items-center place-self-start rounded-t bg-[#3A3E46]">
-                <img className="mx-2 h-6 w-6" src={vars.botAvatar}></img>
+                <img
+                  className="mx-2 h-6 w-6"
+                  src={vars.botAvatar}
+                  alt="bot avatar"
+                ></img>
                 <div>
                   <p className="text-xs text-[#D2EBB5]">{vars.botName}</p>
                   <p className="text-xs text-[#91C257]">
@@ -176,7 +181,11 @@ class BotScript extends React.Component {
                   />
                 </div>
                 <div className="flex h-11 w-11 items-center justify-center border border-black bg-[#2C3036]">
-                  <img className="h-6 w-6 text-white" src={SubmitIcon} />
+                  <img
+                    className="h-6 w-6 text-white"
+                    src={SubmitIcon}
+                    alt="steam chat enter image"
+                  />
                 </div>
               </div>
             </div>
@@ -213,7 +222,11 @@ class Message extends React.Component {
     return (
       <div className="my-2 ml-2 flex  flex-col text-white">
         <div className="flex">
-          <img src={this.props.avatar} className="h-6 w-6"></img>
+          <img
+            src={this.props.avatar}
+            className="h-6 w-6"
+            alt="bot avatar"
+          ></img>
           <p className="ml-0.5 text-sm text-[#6a8f40]">{this.props.name}</p>
         </div>
         <p className="ml-7 whitespace-pre-line text-sm text-[#969696]">

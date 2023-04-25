@@ -7,8 +7,11 @@ jobs:
         with:
           node-version: 16
           cache: pnpm
-      - run: pnpm i
-      - run: npm run build
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          run_install: true
+      - run: pnpm run build
 
 on:
   push:

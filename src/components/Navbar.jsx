@@ -9,6 +9,7 @@ function Navbar() {
   const navigation = [
     { name: '購買流程', id: 'buy' },
     { name: '指令列表', id: 'script' },
+    { name: '購買須知', id: 'notice' },
     { name: '常見問題', id: 'faq' },
     { name: '聯絡我們', id: 'about' },
   ];

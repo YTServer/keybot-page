@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
+import PayProcess from './PayProcess';
 
 export default class QA extends React.Component {
   constructor(props) {
@@ -23,59 +24,77 @@ export default class QA extends React.Component {
 
   navigation = [
     {
-      question: '為什麼 Bot 不會回應我？',
+      question: '你是誰？我會不會付錢給你卻沒有收到 Keys？',
       open: false,
       answer: (
         <p className="text-gray-400">
+          {'自 2012 年起，我一直在經營'}
+          <a
+            className="text-white underline"
+            href="https://steamcommunity.com/groups/Whitey_Server"
+          >
+            【TW】√Whitey | 交易☆BBall★掛機☆DBall
+          </a>
           {
-            '使用前先確認 Bot 的遊戲狀態是否顯示正在營業，如果顯示營業中卻沒有回應請通知管理員'
+            ' 伺服器，目前是台灣歷史最悠久的社群伺服器。在過去的幾年中，我已經完成了超過 500 筆鑰匙訂單，交易總數超過 10000 Keys，從未發生任何交易糾紛。因此，您可以放心購買並且我們會確保您順利地收到您所購買的 Keys。'
           }
         </p>
       ),
     },
     {
-      question: '如何列印繳費單？',
+      question: '為什麼要跟你買？',
+      open: false,
+      answer: (
+        <p className="text-gray-400">
+          {
+            '我們提供的 TF2 Keys 除了價格比 Steam 市集和曼恩商店更優惠之外，還不會受到 Steam 交易限制，您可以立即與其他玩家進行交易購買心儀的帽子、嘲諷、異常帽。此外，我們還提供超商繳費的服務，方便那些沒有信用卡的玩家購買。'
+          }
+        </p>
+      ),
+    },
+    {
+      question: '為什麼 Bot 不會回應我？',
+      open: false,
+      answer: (
+        <p className="text-gray-400">
+          {
+            '在使用 Bot 之前，先確認它的遊戲狀態是否顯示售價及庫存。如果 Bot 的狀態顯示正常，但您仍未收到回應，請通知管理員以便處理。'
+          }
+        </p>
+      ),
+    },
+    {
+      question: '我要怎麼印繳費單？',
       open: false,
       answer: (
         <>
           <p className="mb-2 text-gray-400">
-            請參考以下連結，依照網站中的圖操作即可
+            請選擇您欲前往的超商，並依照圖片上的步驟進行操作即可。
           </p>
-          <ul className="flex list-inside list-disc flex-col space-y-4 text-left text-white underline">
-            <li>
-              <a href="https://www.newebpay.com/info/site_description/seven_ibon_embedded">
-                7-11
-              </a>
-            </li>
-
-            <li>
-              <a href="https://www.newebpay.com/info/site_description/family_embedded">
-                全家
-              </a>
-            </li>
-            <li>
-              <a href="https://www.newebpay.com/info/site_description/okshop_embedded">
-                OK
-              </a>
-            </li>
-            <li>
-              <a href="https://www.newebpay.com/info/site_description/hilife_embedded">
-                萊爾富
-              </a>
-            </li>
-          </ul>
+          <PayProcess />
         </>
       ),
     },
     {
       question: '有其他付款方式嗎？例如：轉帳、Mycard 或是用遊戲物品交易',
       open: false,
-      answer: <p className="text-gray-400">目前只接受超商繳費</p>,
+      answer: (
+        <p className="text-gray-400">
+          目前只接受超商繳費。{' '}
+          <span className="bg-black text-black hover:text-white">
+            轉帳功能被金流公司扼殺了
+          </span>
+        </p>
+      ),
     },
     {
       question: '為什麼我買完沒有辦法使用贊助者指令？',
       open: false,
-      answer: <p className="text-gray-400">遇到這個問題請向管理員回報</p>,
+      answer: (
+        <p className="text-gray-400">
+          贊助者身分是由我手動加入的，因此無法立即獲得資格。如果您已經繳費但仍未獲得贊助者身分，請耐心等待一段時間，如果長時間未獲得身分，請聯繫管理員以協助您解決問題。
+        </p>
+      ),
     },
   ];
 

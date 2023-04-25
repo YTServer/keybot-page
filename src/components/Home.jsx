@@ -19,7 +19,9 @@ class HomePage extends React.Component {
                 Whitey&apos;s TF2 Key Bot
               </h1>
               <p className="mb-6 max-w-2xl font-light text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
-                以最優惠的方式獲取 TF2 鑰匙
+                購買 TF2 鑰匙，即可立即取貨！
+                <br></br>
+                我們的價格比市集及曼恩商店更便宜且不受限制交易，讓你除了省錢外還能馬上使用它們去交易自己心儀的各種裝飾品、嘲諷、異常帽。
               </p>
               <a
                 href="steam://friends/add/76561198047686623"
@@ -44,6 +46,9 @@ class HomePage extends React.Component {
                   number={this.props.botStatus.orders}
                 />
               </div>
+              <p className="text-xs text-gray-500">
+                ＊ 售價與庫存以 Steam 狀態顯示為主
+              </p>
             </div>
             <div className="hidden lg:col-span-5 lg:mt-0 lg:flex">
               <img src={keyBot} alt="key" />

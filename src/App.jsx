@@ -11,6 +11,7 @@ import Navbar from './components/Navbar';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import vars from './variable';
+import Notice from './components/notice';
 
 class App extends React.Component {
   constructor(props) {
@@ -41,6 +42,7 @@ class App extends React.Component {
             <HomePage />
             <HowToBuy />
             <BotScript />
+            <Notice />
             <FAQ />
             <AboutMe />
           </div>

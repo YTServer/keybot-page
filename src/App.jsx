@@ -28,7 +28,7 @@ class App extends React.Component {
           <Helmet>
             <meta
               name="description"
-              content="購買 Team Fortress 2 KEY 絕地要塞2 金鑰，即可立即取貨！提供 7-11、全家、OK、萊爾富四大超商代碼繳費，方便沒有信用卡的玩家。此外，我們的價格比 Steam 市集及遊戲內商店更優惠而且不用被限制交易，讓你除了省錢外還能夠馬上使用它們去交易自己心儀的各種裝飾品、嘲諷、異常帽。"
+              content="購買 TF2 鑰匙，即可立即取貨！提供四大超商代碼繳費。此外，我們的價格比市集及曼恩商店更便宜且不受限制交易，讓你除了省錢外還能馬上使用它們去交易自己心儀的各種裝飾品、嘲諷、異常帽。"
             />
             <title>Whitey’s TF2 Key Bot </title>
             <link rel="icon" type="image/svg+xml" href={vars.botAvatar} />

@@ -44,9 +44,9 @@ class App extends React.Component {
             <FAQ />
             <AboutMe />
           </div>
-          <footer className="m-4 rounded-lg bg-white shadow dark:bg-gray-900">
+          <footer className="m-4 rounded-lg bg-gray-900 shadow">
             <div className="mx-auto w-full max-w-screen-xl p-4 md:py-8">
-              <hr className="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
+              <hr className="my-6 border-gray-700 sm:mx-auto lg:my-8" />
               <div className="mb-2 flex items-center justify-center text-gray-500">
                 <EnvelopeIcon className="h-6 w-6" />
                 <p className="ml-2">admin@whitey.me</p>

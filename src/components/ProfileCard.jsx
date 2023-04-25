@@ -8,7 +8,7 @@ export default class ProfileCard extends React.Component {
 
   render() {
     return (
-      <div className="w-full max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+      <div className="border-gray-200shadow w-full max-w-sm rounded-lg border border-gray-700 bg-gray-800">
         <div className="flex flex-col items-center pb-10 pt-4">
           <img
             className="mb-3 h-24 w-24 rounded-full shadow-lg"
@@ -22,7 +22,7 @@ export default class ProfileCard extends React.Component {
           <div className="mt-4 flex space-x-3 md:mt-6">
             <a
               href={this.props.link}
-              className="inline-flex items-center rounded-lg bg-blue-700 px-4 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="inline-flex items-center rounded-lg bg-blue-600 px-4 py-2 text-center text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-800"
             >
               {this.props.actionTitle}
             </a>

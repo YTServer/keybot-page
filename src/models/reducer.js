@@ -4,7 +4,7 @@ import axios from 'axios';
 export const fetchBotStatus = createAsyncThunk(
   'botStatus/fetchBotStatus',
   async () => {
-    const res = await axios.get('https://tf.whitey.me/api/v1/bot/status');
+    const res = await axios.get('https://api.whitey.me/api/v1/bot/status');
     return res.data;
   }
 );

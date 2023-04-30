@@ -6,7 +6,7 @@ import SubmitIcon from '../assets/submit.svg';
 import DefaultAvatar from '../assets/default_avatar.jpg';
 import Typed from 'react-typed';
 import { connect } from 'react-redux';
-import { selectStatus } from '../models/reducer';
+import { selectStatus } from '../models/statusReducer';
 
 class BotScript extends React.Component {
   constructor(props) {

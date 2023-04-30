@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchBotStatus } from './models/reducer';
+import { fetchBotStatus } from './models/statusReducer';
+import { fetchUser } from './models/userReducer';
 import HomePage from './components/Home';
 import HowToBuy from './components/HowToBuy';
 import BotScript from './components/BotScript';
@@ -20,6 +21,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.props.fetchBotStatus();
+    this.props.fetchUser();
   }
 
   render() {
@@ -66,8 +68,9 @@ class App extends React.Component {
 
 App.propTypes = {
   fetchBotStatus: PropTypes.func.isRequired,
+  fetchUser: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = { fetchBotStatus };
+const mapDispatchToProps = { fetchBotStatus, fetchUser };
 
 export default connect(null, mapDispatchToProps)(App);

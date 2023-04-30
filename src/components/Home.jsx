@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import keyBot from '../assets/key.png';
 import { Card } from './Card';
 import { connect } from 'react-redux';
-import { selectStatus } from '../models/reducer';
+import { selectStatus } from '../models/statusReducer';
 class HomePage extends React.Component {
   constructor(props) {
     super(props);

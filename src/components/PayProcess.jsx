@@ -74,9 +74,8 @@ export default class PayProcess extends React.Component {
             role="tablist"
           >
             {_.map(this.tabs, (tab, index) => (
-              <li className="mr-2" role="presentation">
+              <li className="mr-2" role="presentation" key={index}>
                 <button
-                  key={index}
                   className="inline-block rounded-t-lg p-4 font-bold hover:border-b-2 hover:border-gray-300 hover:text-gray-300"
                   id={`tab-${index}`}
                   data-tabs-target={`#tab-${index}`}
@@ -95,6 +94,7 @@ export default class PayProcess extends React.Component {
         <div id="tabContent">
           {_.map(this.tabs, (tab, index) => (
             <div
+              key={index}
               className="hidden rounded-lg bg-gray-800 p-2 md:p-4"
               id={`tab-content-${index}`}
               role="tabpanel"
@@ -184,5 +184,5 @@ class Gallery extends React.Component {
 }
 
 Gallery.propTypes = {
-  images: PropTypes.string.isRequired,
+  images: PropTypes.array.isRequired,
 };

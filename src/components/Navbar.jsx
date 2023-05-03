@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import vars from '../variable';
 import { connect } from 'react-redux';
 import { selectUser } from '../models/userReducer';
+import { Link, NavLink } from 'react-router-dom';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -18,21 +19,22 @@ class Navbar extends React.Component {
   }
 
   navigation = [
-    { name: '購買流程', id: 'buy' },
-    { name: '指令列表', id: 'script' },
-    { name: '購買須知', id: 'notice' },
-    { name: '常見問題', id: 'faq' },
-    { name: '聯絡我們', id: 'about' },
+    { name: '購買流程', id: '#buy' },
+    { name: '指令列表', id: '#script' },
+    { name: '購買須知', id: '#notice' },
+    { name: '常見問題', id: '#faq' },
+    { name: '聯絡我們', id: '#about' },
+    { name: '查看訂單', id: 'lookup' },
   ];
   navigationItem = this.navigation.map((item) => {
     return (
-      <a
+      <Link
         key={item.id}
         className="cursor-pointer text-sm font-semibold leading-6 text-white"
-        href={'#' + item.id}
+        to={item.id}
       >
         {item.name}
-      </a>
+      </Link>
     );
   });
   navigationItemMobile = this.navigation.map((item) => {
@@ -55,7 +57,7 @@ class Navbar extends React.Component {
         aria-label="Global"
       >
         <div className="flex flex-wrap lg:flex-1">
-          <a href="#home" className="-m-1.5 flex items-center p-1.5">
+          <NavLink to="/" className="-m-1.5 flex items-center p-1.5">
             <span className="sr-only">{vars.botName}</span>
             <img
               width={32}
@@ -66,7 +68,7 @@ class Navbar extends React.Component {
             />
 
             <p className="ml-2 text-white">{vars.botName}</p>
-          </a>
+          </NavLink>
         </div>
         <div className="flex md:hidden">
           <button

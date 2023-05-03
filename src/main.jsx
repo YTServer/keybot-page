@@ -5,12 +5,14 @@ import './index.css';
 
 import store from './models/store';
 import { Provider } from 'react-redux';
+import { HashRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <React.StrictMode>
-      <App />
+      <HashRouter>
+        <App />
+      </HashRouter>
     </React.StrictMode>
-    ,
   </Provider>
 );

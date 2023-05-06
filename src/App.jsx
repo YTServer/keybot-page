@@ -33,8 +33,8 @@ class App extends React.Component {
             <link rel="icon" type="image/svg+xml" href={vars.botAvatar} />
           </Helmet>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/lookup" element={<OrderLookUp />} />
+            <Route exact path="/" element={<Home />} />
+            <Route path="lookup" element={<OrderLookUp />} />
           </Routes>
           <footer className="m-4 rounded-lg bg-gray-900 shadow">
             <div className="mx-auto w-full max-w-screen-xl p-4 md:py-8">

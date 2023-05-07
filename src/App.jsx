@@ -3,16 +3,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchBotStatus } from './models/statusReducer';
 import { fetchUser } from './models/userReducer';
-import HomePage from './components/Home';
-import HowToBuy from './components/HowToBuy';
-import BotScript from './components/BotScript';
-import FAQ from './components/faq';
-import AboutMe from './components/AboutMe';
-import Navbar from './components/Navbar';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import vars from './variable';
-import Notice from './components/notice';
+import { Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
+import OrderLookUp from './components/OrderLookUp';
 
 class App extends React.Component {
   constructor(props) {
@@ -36,18 +32,10 @@ class App extends React.Component {
             <title>Whitey’s TF2 Key Bot </title>
             <link rel="icon" type="image/svg+xml" href={vars.botAvatar} />
           </Helmet>
-          <header className="fixed top-0 mx-auto w-full max-w-full bg-slate-800 scrollbar-hide">
-            <Navbar />
-          </header>
-
-          <div className="flex snap-y snap-mandatory snap-always flex-col gap-12 scroll-smooth px-4 md:px-8">
-            <HomePage />
-            <HowToBuy />
-            <BotScript />
-            <Notice />
-            <FAQ />
-            <AboutMe />
-          </div>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="lookup" element={<OrderLookUp />} />
+          </Routes>
           <footer className="m-4 rounded-lg bg-gray-900 shadow">
             <div className="mx-auto w-full max-w-screen-xl p-4 md:py-8">
               <hr className="my-6 border-gray-700 sm:mx-auto lg:my-8" />

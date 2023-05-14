@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchBotStatus } from './models/statusReducer';
 import { fetchUser } from './models/userReducer';
+import { fetchOrder } from './models/orderReducer';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import vars from './variable';
@@ -18,6 +19,7 @@ class App extends React.Component {
   componentDidMount() {
     this.props.fetchBotStatus();
     this.props.fetchUser();
+    this.props.fetchOrder();
   }
 
   render() {
@@ -57,8 +59,9 @@ class App extends React.Component {
 App.propTypes = {
   fetchBotStatus: PropTypes.func.isRequired,
   fetchUser: PropTypes.func.isRequired,
+  fetchOrder: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = { fetchBotStatus, fetchUser };
+const mapDispatchToProps = { fetchBotStatus, fetchUser, fetchOrder };
 
 export default connect(null, mapDispatchToProps)(App);

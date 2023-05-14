@@ -4,6 +4,7 @@ import _ from 'lodash';
 import { Card } from './Card';
 import { connect } from 'react-redux';
 import { selectStatus } from '../models/statusReducer';
+import { selectOrder } from '../models/orderReducer';
 import DataTable from 'react-data-table-component';
 import { Link } from 'react-router-dom';
 
@@ -183,6 +184,10 @@ const customStyles = {
 };
 
 class OrderLookUp extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div>
@@ -209,12 +214,12 @@ class OrderLookUp extends React.Component {
             <div className="my-5 flex max-w-full flex-row items-center justify-center">
               <Card
                 names="未取貨數量"
-                loading={this.props.botStatus.loading}
+                loading={this.props.order.loading}
                 number={this.props.botStatus.not_picked_qty}
               />
               <Card
                 names="已取貨數量"
-                loading={this.props.botStatus.loading}
+                loading={this.props.order.loading}
                 number={this.props.botStatus.picked_qty}
               />
             </div>
@@ -239,11 +244,29 @@ OrderLookUp.propTypes = {
     not_picked_qty: PropTypes.number.isRequired,
     picked_qty: PropTypes.number.isRequired,
   }).isRequired,
+  order: PropTypes.shape({
+    loading: PropTypes.bool.isRequired,
+    orders: PropTypes.arrayOf(
+      PropTypes.shape({
+        SteamID: PropTypes.string.isRequired,
+        Price: PropTypes.number.isRequired,
+        Count: PropTypes.number.isRequired,
+        OrderStatus: PropTypes.shape({
+          TradeNo: PropTypes.string.isRequired,
+          PayInfo: PropTypes.string.isRequired,
+          PaymentType: PropTypes.string.isRequired,
+          TradeStatus: PropTypes.string.isRequired,
+          ExpireDate: PropTypes.string.isRequired,
+        }),
+      })
+    ),
+  }),
 };
 
 const mapStateToProps = (state) => {
   return {
     botStatus: selectStatus(state),
+    order: selectOrder(state),
   };
 };
 

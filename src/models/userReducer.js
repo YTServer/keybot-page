@@ -4,7 +4,7 @@ import axios from 'axios';
 export const fetchUser = createAsyncThunk(
   'user/fetchUser',
   async () => {
-    const res = await axios.get('https://api.whitey.me/api/v1/orders');
+    const res = await axios.get('https://api.whitey.me/api/v1/user');
     return res.data;
   }
 );
@@ -12,7 +12,8 @@ export const fetchUser = createAsyncThunk(
 export const userSlice = createSlice({
   name: 'user',
   initialState: {
-    avatarUrl: '',
+    avatar: '',
+    name: '',
     loading: true,
     logged: false,
   },
@@ -25,7 +26,8 @@ export const userSlice = createSlice({
         state.logged = false;
       })
       .addCase(fetchUser.fulfilled, (state, action) => {
-        state.avatarUrl = action.payload.id;
+        state.avatar = action.payload.avatar;
+        state.name = action.payload.name;
         state.loading = false;
         state.logged = true;
       })
@@ -38,7 +40,8 @@ export const userSlice = createSlice({
 
 export const selectUser = state => {
   return {
-    avatarUrl: state.user.avatarUrl,
+    avatar: state.user.avatar,
+    name: state.user.name,
     loading: state.user.loading,
     logged: state.user.logged,
   };

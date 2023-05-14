@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
@@ -88,9 +88,20 @@ class Navbar extends React.Component {
           >
             <img src={vars.steamOpenIdButton}></img>
           </a>
-          <p
-            className={`text-white ${this.props.user.logged ? '' : 'hidden'}`}
-          >{`Hi ${this.props.user.avatarUrl}`}</p>
+          <div
+            className={`flex items-center ${
+              this.props.user.logged ? '' : 'hidden'
+            }`}
+          >
+            <img
+              width={32}
+              height={32}
+              alt="user avatar"
+              className="h-8 w-auto rounded-full"
+              src={this.props.user.avatar}
+            ></img>
+            <p className="ml-2 text-white">{this.props.user.name}</p>
+          </div>
         </div>
         <Dialog
           as="div"
@@ -137,7 +148,8 @@ class Navbar extends React.Component {
 
 Navbar.propTypes = {
   user: PropTypes.shape({
-    avatarUrl: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     loading: PropTypes.bool.isRequired,
     logged: PropTypes.bool.isRequired,
   }),

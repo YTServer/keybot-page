@@ -8,118 +8,44 @@ import { selectOrder } from '../models/orderReducer';
 import DataTable from 'react-data-table-component';
 import { Link } from 'react-router-dom';
 
+const TradeStatusMap = {
+  0: '未付款',
+  1: '付款成功',
+  2: '付款失敗',
+  3: '取消付款',
+  6: '退款',
+};
+
 const columns = [
   {
     name: '訂單編號',
-    selector: (row) => parseInt(row.order_id),
+    selector: (row) => row.OrderStatus.TradeNo,
     sortable: true,
   },
   {
     name: '訂單數量',
-    selector: (row) => row.order_qty,
+    selector: (row) => row.Count,
   },
   {
     name: '單價',
-    selector: (row) => parseInt(row.order_unit_price),
+    selector: (row) => row.Price,
     sortable: true,
   },
   {
-    name: '訂單金額(含28元手續費)',
-    selector: (row) => row.order_price,
+    name: '訂單金額(含手續費)',
+    selector: (row) => row.OrderStatus.Amt,
   },
   {
     name: '繳費代碼',
-    selector: (row) => row.order_payment_code,
-  },
-];
-const data = [
-  {
-    id: 1,
-    order_id: '111111',
-    order_qty: '10',
-    order_unit_price: '10',
-    order_price: '128',
-    order_payment_code: 'xXXXXXX',
+    selector: (row) => row.OrderStatus.PayInfo,
   },
   {
-    id: 2,
-    order_id: '222222',
-    order_qty: '20',
-    order_unit_price: '20',
-    order_price: '428',
-    order_payment_code: 'xXXXASDFSADFXXX',
+    name: '繳費期限',
+    selector: (row) => row.OrderStatus.ExpireDate,
   },
   {
-    id: 3,
-    order_id: '333333',
-    order_qty: '30',
-    order_unit_price: '15',
-    order_price: '478',
-    order_payment_code: 'aSdFgh1!As',
-  },
-  {
-    id: 4,
-    order_id: '444444',
-    order_qty: '25',
-    order_unit_price: '12',
-    order_price: '300',
-    order_payment_code: '12XyZ9aBcDe',
-  },
-  {
-    id: 5,
-    order_id: '555555',
-    order_qty: '40',
-    order_unit_price: '10',
-    order_price: '428',
-    order_payment_code: 'kLmNop5!fG',
-  },
-  {
-    id: 6,
-    order_id: '666666',
-    order_qty: '50',
-    order_unit_price: '8',
-    order_price: '428',
-    order_payment_code: '3fGhIjKlMn',
-  },
-  {
-    id: 7,
-    order_id: '777777',
-    order_qty: '60',
-    order_unit_price: '6',
-    order_price: '388',
-    order_payment_code: '9bCdEfGhIp',
-  },
-  {
-    id: 8,
-    order_id: '888888',
-    order_qty: '70',
-    order_unit_price: '5',
-    order_price: '378',
-    order_payment_code: 'uVwXyZ0!gH',
-  },
-  {
-    id: 9,
-    order_id: '999999',
-    order_qty: '15',
-    order_unit_price: '25',
-    order_price: '403',
-    order_payment_code: '6hIjKlMaBc',
-  },
-  {
-    id: 10,
-    order_id: '10000000',
-    order_qty: '15',
-    order_unit_price: '55',
-    order_price: '853',
-    order_payment_code: 'ggeejksadlfa',
-  },
-  {
-    id: 11,
-    order_id: '9999999999999',
-    order_qty: '15',
-    order_unit_price: '55',
-    order_price: '853',
-    order_payment_code: 'ggeejksadlfa',
+    name: '訂單狀態',
+    selector: (row) => TradeStatusMap[row.OrderStatus.TradeStatus],
   },
 ];
 
@@ -226,7 +152,7 @@ class OrderLookUp extends React.Component {
             {/* 如果想做到動態分頁查詢 https://react-data-table-component.netlify.app/?path=/docs/ui-library-material-ui-pagination--custom-material-pagination */}
             <DataTable
               columns={columns}
-              data={data}
+              data={this.props.order.orders}
               pagination
               paginationComponentOptions={paginationComponentOptions}
               customStyles={customStyles}

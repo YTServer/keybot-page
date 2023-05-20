@@ -12,7 +12,34 @@ export const fetchOrder = createAsyncThunk(
 export const orderSlice = createSlice({
   name: 'order',
   initialState: {
-    orders: [],
+    orders: [
+      {
+        SteamID: '1',
+        Price: 60,
+        Count: 10,
+        OrderStatus: {
+          Amt: 628,
+          TradeNo: '20011914051983714',
+          PayInfo: 'CVS00119105187',
+          PaymentType: 'CVS',
+          TradeStatus: '1',
+          ExpireDate: '2020-01-20 23:59:59',
+        }
+      },
+      {
+        SteamID: '1',
+        Price: 60,
+        Count: 11,
+        OrderStatus: {
+          Amt: 688,
+          TradeNo: '20011914051983714',
+          PayInfo: 'CVS00119105187',
+          PaymentType: 'CVS',
+          TradeStatus: '0',
+          ExpireDate: '2020-01-20 23:59:59',
+        }
+      }
+    ],
     loading: true,
   },
   reducers: {
@@ -23,7 +50,7 @@ export const orderSlice = createSlice({
         state.loading = true;
       })
       .addCase(fetchOrder.fulfilled, (state, action) => {
-        state.orders = action.payload.orders;
+        // state.orders = action.payload.orders;
         state.loading = false;
       })
       .addCase(fetchOrder.rejected, (state) => {

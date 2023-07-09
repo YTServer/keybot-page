@@ -6,3 +6,19 @@ html {
   scroll-padding-top: 7rem;
   scroll-behavior: smooth;
 }
+
+s, strike{text-decoration:none;position:relative;}
+s::before, strike::before {
+    top: 50%; /*tweak this to adjust the vertical position if it's off a bit due to your font family */
+    background: rgb(156 163 175); /*this is the color of the line*/
+    content: '';
+    width: 110%;
+    position: absolute;
+    height:.1em;
+    border-radius:.1em;
+    left: -5%;
+    white-space:nowrap;
+    display: block;
+    transform: rotate(-15deg);  
+}
+s.straight::before, strike.straight::before{transform: rotate(0deg);left:-1%;width:102%;}

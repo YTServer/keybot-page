@@ -34,6 +34,7 @@ class HomePage extends React.Component {
                   names="售價"
                   loading={this.props.botStatus.loading}
                   number={this.props.botStatus.price}
+                  originalPrice={this.props.botStatus.marketPrice / 100}
                 />
                 <Card
                   names="庫存"
@@ -48,6 +49,9 @@ class HomePage extends React.Component {
               </div>
               <p className="text-xs text-gray-500">
                 ＊ 售價與庫存以 Steam 狀態顯示為主
+              </p>
+              <p className="text-xs text-gray-500 hidden md:block">
+                ＊ 折扣幅度以 Steam 市集售價計算
               </p>
             </div>
             <div className="hidden lg:col-span-5 lg:mt-0 lg:flex">

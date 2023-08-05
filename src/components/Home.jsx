@@ -27,7 +27,7 @@ class HomePage extends React.Component {
                 href="steam://friends/add/76561198047686623"
                 className="mr-2 mb-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-800 max-sm:hidden"
               >
-                新增好友
+                開始購買
               </a>
               <div className="mt-4 flex max-w-full flex-row items-center justify-center">
                 <Card

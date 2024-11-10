@@ -46,7 +46,7 @@ class App extends React.Component {
                 <p className="ml-2">admin@whitey.me</p>
               </div>
               <span className="block text-center text-sm text-gray-400">
-                © 2023 Whitey. All rights reserved.
+                © 2024 Whitey. All rights reserved.
               </span>
             </div>
           </footer>

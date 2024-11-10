@@ -6,7 +6,8 @@ import SubmitIcon from '../assets/submit.svg';
 import DefaultAvatar from '../assets/default_avatar.jpg';
 import Typed from 'react-typed';
 import { connect } from 'react-redux';
-import { selectStatus } from '../models/reducer';
+import { selectStatus } from '../models/statusReducer';
+import { selectUser } from '../models/userReducer';
 
 class BotScript extends React.Component {
   constructor(props) {
@@ -100,8 +101,8 @@ class BotScript extends React.Component {
     this.messageList.push(
       <Message
         key="req"
-        avatar={DefaultAvatar}
-        name="User"
+        avatar={this.props.user.logged ? this.props.user.avatar : DefaultAvatar}
+        name={this.props.user.logged ? this.props.user.name : 'User'}
         message={displayCommand}
       />
     );
@@ -203,11 +204,18 @@ BotScript.propTypes = {
     orders: PropTypes.number.isRequired,
     loading: PropTypes.bool.isRequired,
   }).isRequired,
+  user: PropTypes.shape({
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    loading: PropTypes.bool.isRequired,
+    logged: PropTypes.bool.isRequired,
+  }),
 };
 
 const mapStateToProps = (state) => {
   return {
     botStatus: selectStatus(state),
+    user: selectUser(state),
   };
 };
 

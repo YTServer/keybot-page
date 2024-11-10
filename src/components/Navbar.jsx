@@ -24,13 +24,14 @@ class Navbar extends React.Component {
     { name: '購買須知', id: '#notice' },
     { name: '常見問題', id: '#faq' },
     { name: '聯絡我們', id: '#about' },
-    { name: '查看訂單', id: 'lookup' },
+    { name: '查看訂單', id: 'lookup', hidden: !this.props.user.logged },
   ];
   navigationItem = this.navigation.map((item) => {
     return (
       <Link
         key={item.id}
         className="cursor-pointer text-sm font-semibold leading-6 text-white"
+        hidden={item.hidden}
         to={item.id}
       >
         {item.name}

@@ -18,40 +18,42 @@ class Navbar extends React.Component {
     this.encodedUrl = encodeURI(loginUrl);
   }
 
-  navigation = [
-    { name: '購買流程', id: '#buy' },
-    { name: '指令列表', id: '#script' },
-    { name: '購買須知', id: '#notice' },
-    { name: '常見問題', id: '#faq' },
-    { name: '聯絡我們', id: '#about' },
-    { name: '查看訂單', id: 'lookup', hidden: !this.props.user.logged },
-  ];
-  navigationItem = this.navigation.map((item) => {
-    return (
-      <Link
-        key={item.id}
-        className="cursor-pointer text-sm font-semibold leading-6 text-white"
-        hidden={item.hidden}
-        to={item.id}
-      >
-        {item.name}
-      </Link>
-    );
-  });
-  navigationItemMobile = this.navigation.map((item) => {
-    return (
-      <a
-        key={item.id}
-        className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black"
-        href={'#' + item.id}
-        onClick={() => this.setState({ mobileMenuOpen: false })}
-      >
-        {item.name}
-      </a>
-    );
-  });
-
   render() {
+    const navigation = [
+      { name: '購買流程', id: '#buy' },
+      { name: '指令列表', id: '#script' },
+      { name: '購買須知', id: '#notice' },
+      { name: '常見問題', id: '#faq' },
+      { name: '聯絡我們', id: '#about' },
+      { name: '查看訂單', id: 'lookup', hidden: !this.props.user.logged },
+    ];
+
+    const navigationItem = navigation.map((item) => {
+      return (
+        <Link
+          key={item.id}
+          className="cursor-pointer text-sm font-semibold leading-6 text-white"
+          hidden={item.hidden}
+          to={item.id}
+        >
+          {item.name}
+        </Link>
+      );
+    });
+
+    const navigationItemMobile = navigation.map((item) => {
+      return (
+        <a
+          key={item.id}
+          className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-black"
+          href={'#' + item.id}
+          onClick={() => this.setState({ mobileMenuOpen: false })}
+        >
+          {item.name}
+        </a>
+      );
+    });
+
     return (
       <nav
         className="flex items-center justify-between p-6 lg:px-8"
@@ -82,7 +84,7 @@ class Navbar extends React.Component {
           </button>
         </div>
         <div className="hidden md:flex md:gap-x-4 lg:gap-x-12">
-          {this.navigationItem}
+          {navigationItem}
           <a
             className={this.props.user.logged ? 'hidden' : ''}
             href={this.encodedUrl}
@@ -138,7 +140,7 @@ class Navbar extends React.Component {
               </button>
             </div>
             <div className="mt-6 flow-root">
-              <div className="space-y-2 py-6">{this.navigationItemMobile}</div>
+              <div className="space-y-2 py-6">{navigationItemMobile}</div>
             </div>
           </Dialog.Panel>
         </Dialog>

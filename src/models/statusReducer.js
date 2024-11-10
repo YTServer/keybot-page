@@ -18,6 +18,7 @@ export const botStatusSlice = createSlice({
     orders: 0,
     not_picked_qty: 0,
     picked_qty: 0,
+    marketPrice: 0,
     loading: true,
   },
   reducers: {},
@@ -30,6 +31,7 @@ export const botStatusSlice = createSlice({
         state.price = action.payload.price;
         state.stock = action.payload.stock;
         state.orders = action.payload.orders;
+        state.marketPrice = action.payload.marketPrice;
         state.loading = false;
       })
       .addCase(fetchBotStatus.rejected, (state) => {
@@ -43,6 +45,7 @@ export const selectStatus = (state) => {
     price: state.botStatus.price,
     stock: state.botStatus.stock,
     orders: state.botStatus.orders,
+    marketPrice: state.botStatus.marketPrice,
     loading: state.botStatus.loading,
     not_picked_qty: state.botStatus.not_picked_qty,
     picked_qty: state.botStatus.picked_qty,

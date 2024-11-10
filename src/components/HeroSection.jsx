@@ -27,13 +27,14 @@ class HeroSection extends React.Component {
                 href="steam://friends/add/76561198047686623"
                 className="mr-2 mb-2 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-800 max-sm:hidden"
               >
-                新增好友
+                開始購買
               </a>
               <div className="mt-4 flex max-w-full flex-row items-center justify-center">
                 <Card
                   names="售價"
                   loading={this.props.botStatus.loading}
                   number={this.props.botStatus.price}
+                  originalPrice={this.props.botStatus.marketPrice / 100}
                 />
                 <Card
                   names="庫存"
@@ -48,6 +49,9 @@ class HeroSection extends React.Component {
               </div>
               <p className="text-xs text-gray-500">
                 ＊ 售價與庫存以 Steam 狀態顯示為主
+              </p>
+              <p className="hidden text-xs text-gray-500 md:block">
+                ＊ 折扣幅度以 Steam 市集售價計算
               </p>
             </div>
             <div className="hidden lg:col-span-5 lg:mt-0 lg:flex">
@@ -66,6 +70,7 @@ HeroSection.propTypes = {
     stock: PropTypes.number.isRequired,
     orders: PropTypes.number.isRequired,
     loading: PropTypes.bool.isRequired,
+    marketPrice: PropTypes.number.isRequired,
   }).isRequired,
 };
 

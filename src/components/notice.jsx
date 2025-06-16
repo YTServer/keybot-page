@@ -13,12 +13,6 @@ export default class Notice extends React.Component {
               }
             </li>
             <li className="border-b border-gray-700 py-5">
-              每筆交易都會含 28 元超商手續費，總共需要支付的金額為
-              <span className="font-bold text-gray-300">
-                售價 * 訂購數量 + 28 元
-              </span>
-            </li>
-            <li className="border-b border-gray-700 py-5">
               購買前請先確認自己的帳號是否能夠交易
             </li>
             <li className="border-b border-gray-700 py-5">
